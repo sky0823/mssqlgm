@@ -1,0 +1,16 @@
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySqlT.exe.config
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySqlT.exe
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySqlT.pdb
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySql.Data.dll
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySql.Web.dll
+D:\Programming\C_Sharp\MySqlT\bin\Release\Google.Protobuf.dll
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySql.Data.xml
+D:\Programming\C_Sharp\MySqlT\bin\Release\MySql.Web.xml
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.csprojAssemblyReference.cache
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.Form1.resources
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.Properties.Resources.resources
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.csproj.GenerateResource.cache
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.csproj.CoreCompileInputs.cache
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.csproj.CopyComplete
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.exe
+D:\Programming\C_Sharp\MySqlT\obj\Release\MySqlT.pdb
