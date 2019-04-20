@@ -184,6 +184,22 @@ namespace MySqlT
         {
             //int rindex = charactersView.CurrentCell.RowIndex;
             chnameText.Text = Rvview("characters", 3);
+            chLevelText.Text = Rvview("characters", 4);
+            chExpText.Text = Rvview("characters", 5);
+            chStrText.Text = Rvview("characters", 6);
+            chDexText.Text = Rvview("characters", 7);
+            chLukText.Text = Rvview("characters", 8);
+            chIntText.Text = Rvview("characters", 9);
+            chHpText.Text = Rvview("characters", 10);
+            chMaxhpText.Text = Rvview("characters", 12);
+            chMpText.Text = Rvview("characters", 11);
+            chMaxmpText.Text = Rvview("characters",13);
+            chJobText.Text = Rvview("characters", 16);
+            chSpText.Text = Rvview("characters", 36);
+            chApText.Text = Rvview("characters", 22);
+            chMesoText.Text = Rvview("characters", 14);
+            chMapText.Text = Rvview("characters", 23);
+            chGmText.Text = Rvview("characters", 25);
         }
 
 

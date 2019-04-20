@@ -2,7 +2,9 @@
 ms資料庫-gm管理工具
 
 Visual Studio 2019
+
 C#
+
 Mysql
 
 
@@ -12,6 +14,7 @@ Mysql
 
 # 2019/04/20
 -已完成-
+
 查詢 accounts 及修改部分參數
 
 查詢 characters 
