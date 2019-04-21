@@ -58,6 +58,10 @@
             this.IDlb = new System.Windows.Forms.Label();
             this.AccountsText = new System.Windows.Forms.TextBox();
             this.charactersPage2 = new System.Windows.Forms.TabPage();
+            this.UPDATEchBtn = new System.Windows.Forms.Button();
+            this.chGMlb = new System.Windows.Forms.Label();
+            this.chMaplb = new System.Windows.Forms.Label();
+            this.chSplb = new System.Windows.Forms.Label();
             this.chAplb = new System.Windows.Forms.Label();
             this.chMesolb = new System.Windows.Forms.Label();
             this.chMaxMplb = new System.Windows.Forms.Label();
@@ -95,6 +99,7 @@
             this.charactersbtn = new System.Windows.Forms.Button();
             this.charactersView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -106,14 +111,18 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.chSplb = new System.Windows.Forms.Label();
-            this.chMaplb = new System.Windows.Forms.Label();
-            this.chGMlb = new System.Windows.Forms.Label();
+            this.SeverIplb = new System.Windows.Forms.Label();
+            this.severPortlb = new System.Windows.Forms.Label();
+            this.Userlb = new System.Windows.Forms.Label();
+            this.Userpasslb = new System.Windows.Forms.Label();
+            this.SqlNamelb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
             this.charactersPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charactersView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Loadaccbtn
@@ -138,11 +147,11 @@
             this.AccountsView.Size = new System.Drawing.Size(779, 222);
             this.AccountsView.StandardTab = true;
             this.AccountsView.TabIndex = 1;
-            this.AccountsView.SelectionChanged += new System.EventHandler(this.AccountsView_SelectionChanged);
+            this.AccountsView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountsView_CellClick);
             // 
             // HostText
             // 
-            this.HostText.Location = new System.Drawing.Point(52, 11);
+            this.HostText.Location = new System.Drawing.Point(59, 12);
             this.HostText.Name = "HostText";
             this.HostText.Size = new System.Drawing.Size(84, 22);
             this.HostText.TabIndex = 2;
@@ -151,7 +160,7 @@
             // 
             // UserText
             // 
-            this.UserText.Location = new System.Drawing.Point(183, 12);
+            this.UserText.Location = new System.Drawing.Point(222, 13);
             this.UserText.Name = "UserText";
             this.UserText.Size = new System.Drawing.Size(84, 22);
             this.UserText.TabIndex = 3;
@@ -160,7 +169,7 @@
             // 
             // PassText
             // 
-            this.PassText.Location = new System.Drawing.Point(183, 40);
+            this.PassText.Location = new System.Drawing.Point(222, 41);
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(84, 22);
             this.PassText.TabIndex = 4;
@@ -168,7 +177,7 @@
             // 
             // NameText
             // 
-            this.NameText.Location = new System.Drawing.Point(322, 12);
+            this.NameText.Location = new System.Drawing.Point(393, 12);
             this.NameText.Name = "NameText";
             this.NameText.Size = new System.Drawing.Size(84, 22);
             this.NameText.TabIndex = 5;
@@ -177,7 +186,7 @@
             // 
             // PortText
             // 
-            this.PortText.Location = new System.Drawing.Point(52, 39);
+            this.PortText.Location = new System.Drawing.Point(59, 40);
             this.PortText.Name = "PortText";
             this.PortText.Size = new System.Drawing.Size(84, 22);
             this.PortText.TabIndex = 6;
@@ -425,6 +434,7 @@
             // 
             // charactersPage2
             // 
+            this.charactersPage2.Controls.Add(this.UPDATEchBtn);
             this.charactersPage2.Controls.Add(this.chGMlb);
             this.charactersPage2.Controls.Add(this.chMaplb);
             this.charactersPage2.Controls.Add(this.chSplb);
@@ -471,6 +481,43 @@
             this.charactersPage2.TabIndex = 1;
             this.charactersPage2.Text = "角色";
             this.charactersPage2.UseVisualStyleBackColor = true;
+            // 
+            // UPDATEchBtn
+            // 
+            this.UPDATEchBtn.Location = new System.Drawing.Point(594, 385);
+            this.UPDATEchBtn.Name = "UPDATEchBtn";
+            this.UPDATEchBtn.Size = new System.Drawing.Size(79, 29);
+            this.UPDATEchBtn.TabIndex = 39;
+            this.UPDATEchBtn.Text = "儲存修改";
+            this.UPDATEchBtn.UseVisualStyleBackColor = true;
+            this.UPDATEchBtn.Click += new System.EventHandler(this.UPDATEchBtn_Click);
+            // 
+            // chGMlb
+            // 
+            this.chGMlb.AutoSize = true;
+            this.chGMlb.Location = new System.Drawing.Point(490, 294);
+            this.chGMlb.Name = "chGMlb";
+            this.chGMlb.Size = new System.Drawing.Size(71, 12);
+            this.chGMlb.TabIndex = 38;
+            this.chGMlb.Text = "角色GM階級";
+            // 
+            // chMaplb
+            // 
+            this.chMaplb.AutoSize = true;
+            this.chMaplb.Location = new System.Drawing.Point(490, 266);
+            this.chMaplb.Name = "chMaplb";
+            this.chMaplb.Size = new System.Drawing.Size(77, 12);
+            this.chMaplb.TabIndex = 37;
+            this.chMaplb.Text = "角色所在地圖";
+            // 
+            // chSplb
+            // 
+            this.chSplb.AutoSize = true;
+            this.chSplb.Location = new System.Drawing.Point(325, 378);
+            this.chSplb.Name = "chSplb";
+            this.chSplb.Size = new System.Drawing.Size(121, 12);
+            this.chSplb.TabIndex = 36;
+            this.chSplb.Text = "技能點(改最前面那格)";
             // 
             // chAplb
             // 
@@ -618,7 +665,7 @@
             // 
             // chSpText
             // 
-            this.chSpText.Location = new System.Drawing.Point(384, 375);
+            this.chSpText.Location = new System.Drawing.Point(452, 375);
             this.chSpText.Name = "chSpText";
             this.chSpText.Size = new System.Drawing.Size(100, 22);
             this.chSpText.TabIndex = 19;
@@ -803,13 +850,23 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(782, 421);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "身上裝備";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(780, 229);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -921,38 +978,61 @@
             this.tabPage14.Text = "tabPage14";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
-            // chSplb
+            // SeverIplb
             // 
-            this.chSplb.AutoSize = true;
-            this.chSplb.Location = new System.Drawing.Point(325, 378);
-            this.chSplb.Name = "chSplb";
-            this.chSplb.Size = new System.Drawing.Size(41, 12);
-            this.chSplb.TabIndex = 36;
-            this.chSplb.Text = "技能點";
+            this.SeverIplb.AutoSize = true;
+            this.SeverIplb.Location = new System.Drawing.Point(2, 15);
+            this.SeverIplb.Name = "SeverIplb";
+            this.SeverIplb.Size = new System.Drawing.Size(51, 12);
+            this.SeverIplb.TabIndex = 8;
+            this.SeverIplb.Text = "伺服器IP";
             // 
-            // chMaplb
+            // severPortlb
             // 
-            this.chMaplb.AutoSize = true;
-            this.chMaplb.Location = new System.Drawing.Point(490, 266);
-            this.chMaplb.Name = "chMaplb";
-            this.chMaplb.Size = new System.Drawing.Size(77, 12);
-            this.chMaplb.TabIndex = 37;
-            this.chMaplb.Text = "角色所在地圖";
+            this.severPortlb.AutoSize = true;
+            this.severPortlb.Location = new System.Drawing.Point(2, 42);
+            this.severPortlb.Name = "severPortlb";
+            this.severPortlb.Size = new System.Drawing.Size(36, 12);
+            this.severPortlb.TabIndex = 9;
+            this.severPortlb.Text = "埠Port";
             // 
-            // chGMlb
+            // Userlb
             // 
-            this.chGMlb.AutoSize = true;
-            this.chGMlb.Location = new System.Drawing.Point(490, 294);
-            this.chGMlb.Name = "chGMlb";
-            this.chGMlb.Size = new System.Drawing.Size(70, 12);
-            this.chGMlb.TabIndex = 38;
-            this.chGMlb.Text = "角色Gm階級";
+            this.Userlb.AutoSize = true;
+            this.Userlb.Location = new System.Drawing.Point(151, 15);
+            this.Userlb.Name = "Userlb";
+            this.Userlb.Size = new System.Drawing.Size(65, 12);
+            this.Userlb.TabIndex = 10;
+            this.Userlb.Text = "使用者名稱";
+            // 
+            // Userpasslb
+            // 
+            this.Userpasslb.AutoSize = true;
+            this.Userpasslb.Location = new System.Drawing.Point(151, 44);
+            this.Userpasslb.Name = "Userpasslb";
+            this.Userpasslb.Size = new System.Drawing.Size(65, 12);
+            this.Userpasslb.TabIndex = 11;
+            this.Userpasslb.Text = "使用者密碼";
+            // 
+            // SqlNamelb
+            // 
+            this.SqlNamelb.AutoSize = true;
+            this.SqlNamelb.Location = new System.Drawing.Point(322, 15);
+            this.SqlNamelb.Name = "SqlNamelb";
+            this.SqlNamelb.Size = new System.Drawing.Size(65, 12);
+            this.SqlNamelb.TabIndex = 12;
+            this.SqlNamelb.Text = "資料庫名稱";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 523);
+            this.Controls.Add(this.SqlNamelb);
+            this.Controls.Add(this.Userpasslb);
+            this.Controls.Add(this.Userlb);
+            this.Controls.Add(this.severPortlb);
+            this.Controls.Add(this.SeverIplb);
             this.Controls.Add(this.Accountstab);
             this.Controls.Add(this.PortText);
             this.Controls.Add(this.NameText);
@@ -968,6 +1048,8 @@
             this.charactersPage2.ResumeLayout(false);
             this.charactersPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charactersView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1056,6 +1138,13 @@
         private System.Windows.Forms.Label chGMlb;
         private System.Windows.Forms.Label chMaplb;
         private System.Windows.Forms.Label chSplb;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button UPDATEchBtn;
+        private System.Windows.Forms.Label SeverIplb;
+        private System.Windows.Forms.Label severPortlb;
+        private System.Windows.Forms.Label Userlb;
+        private System.Windows.Forms.Label Userpasslb;
+        private System.Windows.Forms.Label SqlNamelb;
     }
 }
 

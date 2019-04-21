@@ -102,23 +102,40 @@ namespace MySqlT
             // 如果有特殊的編碼在database後面請加上;CharSet=編碼, utf8請使用utf8_general_ci 
             string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
             MySqlConnection conn = new MySqlConnection(connStr);
-
-            /*String strACash = "UPDATE `accounts` SET `ACash`='" + ACashText.Text + "' WHERE (`id`='" + rindex + "')";
-            String strmPoint = "UPDATE `accounts` SET `mPoint`='" + mPointText.Text + "' WHERE (`id`='" + rindex + "')";
-            String strgender = "UPDATE `accounts` SET `gender`='" + genderText.Text + "' WHERE (`id`='"+ rindex + "')";*/
-            String strsql = "UPDATE `"+ s+ "` SET `ACash`='" + ACashText.Text + "',"
+            String strsql = "UPDATE `" + s + "` SET `ACash`='" + ACashText.Text + "',"
                             + "`mPoints`= '" + mPointsText.Text + "',"
                             + "`gender`= '" + genderText.Text
                             + "'WHERE (`id`='" + rindex + "')";
+            String chstrsql = "UPDATE `" + s + "` SET `name`='" + chnameText.Text
+                            + "',`level`='" + chLevelText.Text + "',`exp`='" + chExpText.Text + "',`str`='" + chStrText.Text
+                            + "',`dex`='" + chDexText.Text + "',`luk`='" + chLukText.Text + "',`int`='" + chIntText.Text
+                            + "',`hp`='" + chHpText.Text + "',`mp`='" + chMpText.Text + "',`maxhp`='" + chMaxhpText.Text
+                            + "',`maxmp`='" + chMaxmpText.Text + "',`meso`='" + chMesoText.Text + "',`job`='" + chJobText.Text
+                            + "',`ap`='" + chApText.Text + "',`map`='" + chMapText.Text + "',`gm`='" + chGmText.Text
+                            + "',`sp`='" + chSpText.Text + ",0,0,0,0,0,0,0,0,0' WHERE (`id`='" + rindex + "')";
 
             // 連線到資料庫 
             try
             {
                 conn.Open();
-                MySqlDataAdapter sqlDA = new MySqlDataAdapter(strsql, conn);
-                DataSet dataset = new DataSet();
-                sqlDA.Fill(dataset);
-
+                MySqlDataAdapter sqlDA;
+                switch (s)
+                {
+                    case "accounts":
+                        {
+                            sqlDA = new MySqlDataAdapter(strsql, conn);
+                            DataSet dataset = new DataSet();
+                            sqlDA.Fill(dataset);
+                            break;
+                        }
+                    case "characters":
+                        {
+                            sqlDA = new MySqlDataAdapter(chstrsql, conn);
+                            DataSet dataset = new DataSet();
+                            sqlDA.Fill(dataset);
+                            break;
+                        }       
+                }                
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -143,13 +160,23 @@ namespace MySqlT
         }
         private void UPDATEaccBtn_Click(object sender, EventArgs e)
         {
-            UPDATEBsql("accounts");
+            if (AccountsText.Text != "帳號")
+                UPDATEBsql("accounts");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
         }
         private void Charactersbtn_Click(object sender, EventArgs e)
         {
             Loadsql("characters");
         }
-        private void AccountsView_SelectionChanged(object sender, EventArgs e)
+        private void UPDATEchBtn_Click(object sender, EventArgs e)
+        {
+            if (chLevelText.Text != "角色等級")
+                UPDATEBsql("characters");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
+        }
+        private void AccountsView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //string value= dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
            /* int rindex = AccountsView.CurrentCell.RowIndex;
