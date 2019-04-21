@@ -107,7 +107,7 @@ namespace MySqlT
             String strmPoint = "UPDATE `accounts` SET `mPoint`='" + mPointText.Text + "' WHERE (`id`='" + rindex + "')";
             String strgender = "UPDATE `accounts` SET `gender`='" + genderText.Text + "' WHERE (`id`='"+ rindex + "')";*/
             String strsql = "UPDATE `"+ s+ "` SET `ACash`='" + ACashText.Text + "',"
-                            + "`mPoints`= '" + mPointText.Text + "',"
+                            + "`mPoints`= '" + mPointsText.Text + "',"
                             + "`gender`= '" + genderText.Text
                             + "'WHERE (`id`='" + rindex + "')";
 
@@ -176,7 +176,7 @@ namespace MySqlT
             TwoPasswordText.Text = Rvview("accounts", 4);
             GmText.Text = Rvview("accounts", 12);
             ACashText.Text = Rvview("accounts", 17);
-            mPointText.Text = Rvview("accounts", 18);
+            mPointsText.Text = Rvview("accounts", 18);
             genderText.Text = Rvview("accounts", 19);
         }
 
@@ -201,8 +201,6 @@ namespace MySqlT
             chMapText.Text = Rvview("characters", 23);
             chGmText.Text = Rvview("characters", 25);
         }
-
-
     }
 }
 
