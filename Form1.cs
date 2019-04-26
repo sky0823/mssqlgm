@@ -71,7 +71,8 @@ namespace MySqlT
                         break;
                 }
             }
-            conn.Close();
+           MessageBox.Show("載入成功");
+           conn.Close();
         }
         public string Rvview(string sel, int col)
         {
