@@ -98,8 +98,8 @@
             this.chIDlb = new System.Windows.Forms.Label();
             this.charactersbtn = new System.Windows.Forms.Button();
             this.charactersView = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chItemPage3 = new System.Windows.Forms.TabPage();
+            this.chItemView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -116,13 +116,17 @@
             this.Userlb = new System.Windows.Forms.Label();
             this.Userpasslb = new System.Windows.Forms.Label();
             this.SqlNamelb = new System.Windows.Forms.Label();
+            this.UPDATEchItemBtn = new System.Windows.Forms.Button();
+            this.chItemloadAllbtn = new System.Windows.Forms.Button();
+            this.chItemloadSinbtn = new System.Windows.Forms.Button();
+            this.chnameloadItemText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
             this.charactersPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charactersView)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.chItemPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chItemView)).BeginInit();
             this.SuspendLayout();
             // 
             // Loadaccbtn
@@ -198,7 +202,7 @@
             this.Accountstab.AccessibleName = "";
             this.Accountstab.Controls.Add(this.AccountsPage1);
             this.Accountstab.Controls.Add(this.charactersPage2);
-            this.Accountstab.Controls.Add(this.tabPage3);
+            this.Accountstab.Controls.Add(this.chItemPage3);
             this.Accountstab.Controls.Add(this.tabPage4);
             this.Accountstab.Controls.Add(this.tabPage5);
             this.Accountstab.Controls.Add(this.tabPage6);
@@ -848,25 +852,29 @@
             this.charactersView.TabIndex = 0;
             this.charactersView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CharactersView_CellClick);
             // 
-            // tabPage3
+            // chItemPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(782, 421);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "身上裝備";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.chItemPage3.Controls.Add(this.chnameloadItemText);
+            this.chItemPage3.Controls.Add(this.chItemloadSinbtn);
+            this.chItemPage3.Controls.Add(this.UPDATEchItemBtn);
+            this.chItemPage3.Controls.Add(this.chItemloadAllbtn);
+            this.chItemPage3.Controls.Add(this.chItemView);
+            this.chItemPage3.Location = new System.Drawing.Point(4, 22);
+            this.chItemPage3.Name = "chItemPage3";
+            this.chItemPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.chItemPage3.Size = new System.Drawing.Size(782, 421);
+            this.chItemPage3.TabIndex = 2;
+            this.chItemPage3.Text = "身上物品";
+            this.chItemPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // chItemView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 229);
-            this.dataGridView1.TabIndex = 0;
+            this.chItemView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chItemView.Location = new System.Drawing.Point(-4, 0);
+            this.chItemView.Name = "chItemView";
+            this.chItemView.RowTemplate.Height = 24;
+            this.chItemView.Size = new System.Drawing.Size(780, 229);
+            this.chItemView.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -1023,6 +1031,43 @@
             this.SqlNamelb.TabIndex = 12;
             this.SqlNamelb.Text = "資料庫名稱";
             // 
+            // UPDATEchItemBtn
+            // 
+            this.UPDATEchItemBtn.Location = new System.Drawing.Point(696, 235);
+            this.UPDATEchItemBtn.Name = "UPDATEchItemBtn";
+            this.UPDATEchItemBtn.Size = new System.Drawing.Size(79, 29);
+            this.UPDATEchItemBtn.TabIndex = 41;
+            this.UPDATEchItemBtn.Text = "儲存修改";
+            this.UPDATEchItemBtn.UseVisualStyleBackColor = true;
+            this.UPDATEchItemBtn.Click += new System.EventHandler(this.UPDATEchItemBtn_Click);
+            // 
+            // chItemloadAllbtn
+            // 
+            this.chItemloadAllbtn.Location = new System.Drawing.Point(696, 385);
+            this.chItemloadAllbtn.Name = "chItemloadAllbtn";
+            this.chItemloadAllbtn.Size = new System.Drawing.Size(79, 29);
+            this.chItemloadAllbtn.TabIndex = 40;
+            this.chItemloadAllbtn.Text = "載入全部";
+            this.chItemloadAllbtn.UseVisualStyleBackColor = true;
+            this.chItemloadAllbtn.Click += new System.EventHandler(this.ChItemloadbtn_Click);
+            // 
+            // chItemloadSinbtn
+            // 
+            this.chItemloadSinbtn.Location = new System.Drawing.Point(561, 385);
+            this.chItemloadSinbtn.Name = "chItemloadSinbtn";
+            this.chItemloadSinbtn.Size = new System.Drawing.Size(87, 29);
+            this.chItemloadSinbtn.TabIndex = 42;
+            this.chItemloadSinbtn.Text = "載入單一角色";
+            this.chItemloadSinbtn.UseVisualStyleBackColor = true;
+            this.chItemloadSinbtn.Click += new System.EventHandler(this.ChItemloadSinbtn_Click);
+            // 
+            // chnameloadItemText
+            // 
+            this.chnameloadItemText.Location = new System.Drawing.Point(430, 390);
+            this.chnameloadItemText.Name = "chnameloadItemText";
+            this.chnameloadItemText.Size = new System.Drawing.Size(125, 22);
+            this.chnameloadItemText.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1048,8 +1093,9 @@
             this.charactersPage2.ResumeLayout(false);
             this.charactersPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charactersView)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.chItemPage3.ResumeLayout(false);
+            this.chItemPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chItemView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1067,7 +1113,7 @@
         private System.Windows.Forms.TabControl Accountstab;
         private System.Windows.Forms.TabPage AccountsPage1;
         private System.Windows.Forms.TabPage charactersPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage chItemPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
@@ -1138,13 +1184,17 @@
         private System.Windows.Forms.Label chGMlb;
         private System.Windows.Forms.Label chMaplb;
         private System.Windows.Forms.Label chSplb;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView chItemView;
         private System.Windows.Forms.Button UPDATEchBtn;
         private System.Windows.Forms.Label SeverIplb;
         private System.Windows.Forms.Label severPortlb;
         private System.Windows.Forms.Label Userlb;
         private System.Windows.Forms.Label Userpasslb;
         private System.Windows.Forms.Label SqlNamelb;
+        private System.Windows.Forms.Button UPDATEchItemBtn;
+        private System.Windows.Forms.Button chItemloadAllbtn;
+        private System.Windows.Forms.TextBox chnameloadItemText;
+        private System.Windows.Forms.Button chItemloadSinbtn;
     }
 }
 

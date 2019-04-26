@@ -12,6 +12,8 @@ using MySql.Data.MySqlClient;
 
 //https://www.1keydata.com/tw/sql/sql-syntax.html   ---SQL語法
 //https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html
+//https://dotblogs.com.tw/chichiblog/2017/10/16/155514
+//https://dotblogs.com.tw/chichiblog/2017/10/16/163211
 
 namespace MySqlT
 {
@@ -29,18 +31,16 @@ namespace MySqlT
             string dbPass = PassText.Text;
             string dbName = NameText.Text;
             string dbPort = PortText.Text;
-            string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
-            //string connStr = "server=" + H + ";uid=" + U + ";pwd=" + P + ";database=" + N + "; convert zero datetime=True" + ";Port=" + port;
-            MySqlConnection conn = new MySqlConnection(connStr);
+            //string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
+            //MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection("server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort);
 
-            String strSQL = " SELECT * FROM `" + s + "` WHERE 1 LIMIT 0,30";
-
-            //String strSQL = " SELECT * FROM `accounts` WHERE 1 LIMIT 0,30";
-
+            
             // 連線到資料庫 
             try
             {
                 conn.Open();
+                String strSQL = " SELECT * FROM `" + s + "`";
                 MySqlDataAdapter sqlDA = new MySqlDataAdapter(strSQL, conn);
                 DataSet dataset = new DataSet();
                 sqlDA.Fill(dataset);
@@ -54,7 +54,12 @@ namespace MySqlT
                         charactersView.AutoGenerateColumns = true;
                         charactersView.DataSource = dataset.Tables[0];
                         break;
+                    case "inventoryitems":
+                        chItemView.AutoGenerateColumns = true;
+                        chItemView.DataSource = dataset.Tables[0];
+                        break;
                 }
+                MessageBox.Show("載入成功");
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -71,8 +76,72 @@ namespace MySqlT
                         break;
                 }
             }
-           MessageBox.Show("載入成功");
+           
            conn.Close();
+        }
+
+        private void LoadSinsql(string s, string strSQLKeyword)
+        {
+            string dbHost = HostText.Text;
+            string dbUser = UserText.Text;
+            string dbPass = PassText.Text;
+            string dbName = NameText.Text;
+            string dbPort = PortText.Text;
+            //string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
+            //MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection("server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort);
+
+
+            // 連線到資料庫 
+            try
+            {
+                conn.Open();
+                //String strSQL = " SELECT * FROM `" + s + "`";
+                MySqlDataAdapter sqlDA = new MySqlDataAdapter(strSQLKeyword, conn);
+                DataSet dataset = new DataSet();
+                sqlDA.Fill(dataset);
+                if (dataset.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("查無此角色");
+                    chItemView.DataSource = null;
+                    DataGridView.
+                    return ;
+                }
+
+                switch (s)
+                {
+                    case "accounts":
+                        AccountsView.AutoGenerateColumns = true;
+                        AccountsView.DataSource = dataset.Tables[0];
+                        break;
+                    case "characters":
+                        charactersView.AutoGenerateColumns = true;
+                        charactersView.DataSource = dataset.Tables[0];
+                        break;
+                    case "inventoryitems":
+                        chItemView.AutoGenerateColumns = true;
+                        chItemView.DataSource = dataset.Tables[0];
+                        break;
+                }
+                MessageBox.Show("載入成功");
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("無法連線到資料庫.請再確認參數是否正確或資料庫是否開啟.");
+                        break;
+                    case 1045:
+                        MessageBox.Show("使用者帳號或密碼錯誤,請再試一次.");
+                        break;
+                    default:
+                        MessageBox.Show("Error:" + ex.Number + '\n' + ex.Message);
+                        break;
+                }
+            }
+
+            conn.Close();
         }
         public string Rvview(string sel, int col)
         {
@@ -114,6 +183,7 @@ namespace MySqlT
                             + "',`maxmp`='" + chMaxmpText.Text + "',`meso`='" + chMesoText.Text + "',`job`='" + chJobText.Text
                             + "',`ap`='" + chApText.Text + "',`map`='" + chMapText.Text + "',`gm`='" + chGmText.Text
                             + "',`sp`='" + chSpText.Text + ",0,0,0,0,0,0,0,0,0' WHERE (`id`='" + rindex + "')";
+            String chItemstrsql = "UPDATE `" + s + "` SET";
 
             // 連線到資料庫 
             try
@@ -135,8 +205,16 @@ namespace MySqlT
                             DataSet dataset = new DataSet();
                             sqlDA.Fill(dataset);
                             break;
-                        }       
-                }                
+                        }
+                    case "inventoryitems":
+                        {
+                            sqlDA = new MySqlDataAdapter(chItemstrsql, conn);
+                            DataSet dataset = new DataSet();
+                            sqlDA.Fill(dataset);
+                            break;
+                        }
+                }
+                MessageBox.Show("修改成功");
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -155,28 +233,7 @@ namespace MySqlT
             }
             conn.Close();
         }
-        private void Loadaccbtn_Click(object sender, EventArgs e)
-        {         
-            Loadsql("accounts");
-        }
-        private void UPDATEaccBtn_Click(object sender, EventArgs e)
-        {
-            if (AccountsText.Text != "帳號")
-                UPDATEBsql("accounts");
-            else
-                MessageBox.Show("請先載入再嘗試儲存修改");
-        }
-        private void Charactersbtn_Click(object sender, EventArgs e)
-        {
-            Loadsql("characters");
-        }
-        private void UPDATEchBtn_Click(object sender, EventArgs e)
-        {
-            if (chLevelText.Text != "角色等級")
-                UPDATEBsql("characters");
-            else
-                MessageBox.Show("請先載入再嘗試儲存修改");
-        }
+
         private void AccountsView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //string value= dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
@@ -229,6 +286,52 @@ namespace MySqlT
             chMapText.Text = Rvview("characters", 23);
             chGmText.Text = Rvview("characters", 25);
         }
+
+        //-------------------------------------------------------------------------------------------
+        private void Loadaccbtn_Click(object sender, EventArgs e)
+        {
+            Loadsql("accounts");
+        }
+        private void UPDATEaccBtn_Click(object sender, EventArgs e)
+        {
+            if (AccountsText.Text != "帳號")
+                UPDATEBsql("accounts");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
+        }
+        private void Charactersbtn_Click(object sender, EventArgs e)
+        {
+            Loadsql("characters");
+        }
+        private void UPDATEchBtn_Click(object sender, EventArgs e)
+        {
+            if (chLevelText.Text != "角色等級")
+                UPDATEBsql("characters");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
+        }
+        private void ChItemloadbtn_Click(object sender, EventArgs e)
+        {
+            Loadsql("inventoryitems");
+        }
+        private void UPDATEchItemBtn_Click(object sender, EventArgs e)
+        {
+            if (chLevelText.Text != "角色等級")
+                UPDATEBsql("inventoryitems");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
+        }
+
+        private void ChItemloadSinbtn_Click(object sender, EventArgs e)
+        {
+            if (chnameloadItemText.Text != "")
+            {
+                LoadSinsql("inventoryitems", "SELECT * FROM inventoryitems WHERE characterid = (SELECT id FROM characters WHERE name LIKE '" + chnameloadItemText.Text + "')");
+            }
+            else
+                MessageBox.Show("請輸入角色名稱在查詢");
+        }
+        //--------------------------------------------------------------------------------------------------------
     }
 }
 
