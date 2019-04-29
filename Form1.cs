@@ -96,18 +96,17 @@ namespace MySqlT
             try
             {
                 conn.Open();
-                //String strSQL = " SELECT * FROM `" + s + "`";
                 MySqlDataAdapter sqlDA = new MySqlDataAdapter(strSQLKeyword, conn);
                 DataSet dataset = new DataSet();
                 sqlDA.Fill(dataset);
                 if (dataset.Tables[0].Rows.Count == 0)
                 {
                     MessageBox.Show("查無此角色");
+                    AccountsView.DataSource = null;
                     chItemView.DataSource = null;
-                    DataGridView.
+                    charactersView.DataSource = null;
                     return ;
                 }
-
                 switch (s)
                 {
                     case "accounts":
@@ -157,6 +156,11 @@ namespace MySqlT
                         int rindex = charactersView.CurrentCell.RowIndex;
                         return charactersView.Rows[rindex].Cells[col].Value.ToString();
                     }
+                case "inventoryitem":
+                    {
+                        int rindex = chItemView.CurrentCell.RowIndex;
+                        return chItemView.Rows[rindex].Cells[col].Value.ToString();
+                    }                    
             }
             return "error";
         }
@@ -236,21 +240,6 @@ namespace MySqlT
 
         private void AccountsView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //string value= dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
-           /* int rindex = AccountsView.CurrentCell.RowIndex;
-            IDlb.Text= "ID:"+AccountsView.Rows[rindex].Cells[0].Value.ToString();
-            loggedinlb.Text ="登入狀態:"+ AccountsView.Rows[rindex].Cells[6].Value.ToString();
-            lastloginlb.Text = "最後登入時間:"+AccountsView.Rows[rindex].Cells[7].Value.ToString();
-            bannedlb.Text = "封鎖狀態:"+AccountsView.Rows[rindex].Cells[10].Value.ToString();
-            SessionIPlb.Text = "IP:"+AccountsView.Rows[rindex].Cells[20].Value.ToString();
-            AccountsText.Text = AccountsView.Rows[rindex].Cells[1].Value.ToString();//1
-            PasswordText.Text = AccountsView.Rows[rindex].Cells[2].Value.ToString();//2
-            TwoPasswordText.Text = AccountsView.Rows[rindex].Cells[4].Value.ToString();//4
-            GmText.Text = AccountsView.Rows[rindex].Cells[12].Value.ToString();//12
-            ACashText.Text = AccountsView.Rows[rindex].Cells[17].Value.ToString();//17
-            mPointText.Text = AccountsView.Rows[rindex].Cells[18].Value.ToString();//18
-            genderText.Text = AccountsView.Rows[rindex].Cells[19].Value.ToString();//19*/
-            // AccountsText.Text = dataGridView1[dataGridView1.CurrentCell.ColumnIndex,dataGridView1.CurrentCell.RowIndex].Value;
             IDlb.Text = "ID:" + Rvview("accounts", 0);
             loggedinlb.Text = "登入狀態:" + Rvview("accounts", 6);
             lastloginlb.Text = "最後登入時間:" + Rvview("accounts", 7);
@@ -267,7 +256,6 @@ namespace MySqlT
 
         private void CharactersView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int rindex = charactersView.CurrentCell.RowIndex;
             chnameText.Text = Rvview("characters", 3);
             chLevelText.Text = Rvview("characters", 4);
             chExpText.Text = Rvview("characters", 5);
@@ -286,11 +274,47 @@ namespace MySqlT
             chMapText.Text = Rvview("characters", 23);
             chGmText.Text = Rvview("characters", 25);
         }
+        private void ChItemView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ItemchidText.Text = Rvview("inventoryitem", 1);
+            ItemitemidText.Text = Rvview("inventoryitem", 4);
+            //ItemiteminventorytypeText.Text = Rvview("inventoryitem", 5);
+            ItemitempositionText.Text = Rvview("inventoryitem", 6);
+            ItemquantityText.Text = Rvview("inventoryitem", 7);
+            switch (Rvview("inventoryitem", 5))
+            {
+                case "-1":
+                    ItemiteminventorytypeText.Text = "身上";
+                    break;
+                case "1":
+                    ItemiteminventorytypeText.Text = "裝備";
+                    break;
+                case "2":
+                    ItemiteminventorytypeText.Text = "消耗";
+                    break;
+                case "3":
+                    ItemiteminventorytypeText.Text = "裝飾";
+                    break;
+                case "4":
+                    ItemiteminventorytypeText.Text = "其他";
+                    break;
+                case "5":
+                    ItemiteminventorytypeText.Text = "特殊";
+                    break;
+            }
 
+        }
         //-------------------------------------------------------------------------------------------
         private void Loadaccbtn_Click(object sender, EventArgs e)
         {
             Loadsql("accounts");
+        }
+        private void AccountSinBtn_Click(object sender, EventArgs e)
+        {
+            if (AccountSinText.Text != "")
+                LoadSinsql("accounts", "SELECT * FROM accounts WHERE name = (SELECT name FROM accounts WHERE name LIKE '" + AccountSinText.Text + "')");
+            else
+                MessageBox.Show("請輸入帳號在查詢");
         }
         private void UPDATEaccBtn_Click(object sender, EventArgs e)
         {
@@ -302,6 +326,13 @@ namespace MySqlT
         private void Charactersbtn_Click(object sender, EventArgs e)
         {
             Loadsql("characters");
+        }
+        private void CharatersSinbtn_Click(object sender, EventArgs e)
+        {
+            if (charactersSinText.Text != "")
+                LoadSinsql("characters", "SELECT * FROM characters WHERE name = (SELECT name FROM characters WHERE name LIKE '%" + charactersSinText.Text + "%')");
+            else
+                MessageBox.Show("請輸入角色名稱在查詢");
         }
         private void UPDATEchBtn_Click(object sender, EventArgs e)
         {
@@ -325,12 +356,13 @@ namespace MySqlT
         private void ChItemloadSinbtn_Click(object sender, EventArgs e)
         {
             if (chnameloadItemText.Text != "")
-            {
-                LoadSinsql("inventoryitems", "SELECT * FROM inventoryitems WHERE characterid = (SELECT id FROM characters WHERE name LIKE '" + chnameloadItemText.Text + "')");
-            }
+                LoadSinsql("inventoryitems", "SELECT * FROM inventoryitems WHERE characterid = (SELECT id FROM characters WHERE name LIKE '%" + chnameloadItemText.Text + "%')");
             else
                 MessageBox.Show("請輸入角色名稱在查詢");
         }
+
+
+
         //--------------------------------------------------------------------------------------------------------
     }
 }

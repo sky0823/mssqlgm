@@ -37,6 +37,8 @@
             this.PortText = new System.Windows.Forms.TextBox();
             this.Accountstab = new System.Windows.Forms.TabControl();
             this.AccountsPage1 = new System.Windows.Forms.TabPage();
+            this.AccountSinBtn = new System.Windows.Forms.Button();
+            this.AccountSinText = new System.Windows.Forms.TextBox();
             this.genderlb = new System.Windows.Forms.Label();
             this.mPointslb = new System.Windows.Forms.Label();
             this.ACashlb = new System.Windows.Forms.Label();
@@ -58,6 +60,8 @@
             this.IDlb = new System.Windows.Forms.Label();
             this.AccountsText = new System.Windows.Forms.TextBox();
             this.charactersPage2 = new System.Windows.Forms.TabPage();
+            this.charatersSinbtn = new System.Windows.Forms.Button();
+            this.charactersSinText = new System.Windows.Forms.TextBox();
             this.UPDATEchBtn = new System.Windows.Forms.Button();
             this.chGMlb = new System.Windows.Forms.Label();
             this.chMaplb = new System.Windows.Forms.Label();
@@ -99,6 +103,10 @@
             this.charactersbtn = new System.Windows.Forms.Button();
             this.charactersView = new System.Windows.Forms.DataGridView();
             this.chItemPage3 = new System.Windows.Forms.TabPage();
+            this.chnameloadItemText = new System.Windows.Forms.TextBox();
+            this.chItemloadSinbtn = new System.Windows.Forms.Button();
+            this.UPDATEchItemBtn = new System.Windows.Forms.Button();
+            this.chItemloadAllbtn = new System.Windows.Forms.Button();
             this.chItemView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -116,10 +124,16 @@
             this.Userlb = new System.Windows.Forms.Label();
             this.Userpasslb = new System.Windows.Forms.Label();
             this.SqlNamelb = new System.Windows.Forms.Label();
-            this.UPDATEchItemBtn = new System.Windows.Forms.Button();
-            this.chItemloadAllbtn = new System.Windows.Forms.Button();
-            this.chItemloadSinbtn = new System.Windows.Forms.Button();
-            this.chnameloadItemText = new System.Windows.Forms.TextBox();
+            this.ItemchidText = new System.Windows.Forms.TextBox();
+            this.Itemchidlb = new System.Windows.Forms.Label();
+            this.ItemitemidText = new System.Windows.Forms.TextBox();
+            this.Itemitemidlb = new System.Windows.Forms.Label();
+            this.ItemiteminventorytypeText = new System.Windows.Forms.TextBox();
+            this.Iteminventorytypeb = new System.Windows.Forms.Label();
+            this.ItemitempositionText = new System.Windows.Forms.TextBox();
+            this.Itemitempositionlb = new System.Windows.Forms.Label();
+            this.ItemquantityText = new System.Windows.Forms.TextBox();
+            this.Itemquantitylb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
@@ -222,6 +236,8 @@
             // 
             // AccountsPage1
             // 
+            this.AccountsPage1.Controls.Add(this.AccountSinBtn);
+            this.AccountsPage1.Controls.Add(this.AccountSinText);
             this.AccountsPage1.Controls.Add(this.genderlb);
             this.AccountsPage1.Controls.Add(this.mPointslb);
             this.AccountsPage1.Controls.Add(this.ACashlb);
@@ -251,6 +267,23 @@
             this.AccountsPage1.TabIndex = 0;
             this.AccountsPage1.Text = "帳號";
             this.AccountsPage1.UseVisualStyleBackColor = true;
+            // 
+            // AccountSinBtn
+            // 
+            this.AccountSinBtn.Location = new System.Drawing.Point(683, 251);
+            this.AccountSinBtn.Name = "AccountSinBtn";
+            this.AccountSinBtn.Size = new System.Drawing.Size(95, 21);
+            this.AccountSinBtn.TabIndex = 43;
+            this.AccountSinBtn.Text = "載入單一帳號";
+            this.AccountSinBtn.UseVisualStyleBackColor = true;
+            this.AccountSinBtn.Click += new System.EventHandler(this.AccountSinBtn_Click);
+            // 
+            // AccountSinText
+            // 
+            this.AccountSinText.Location = new System.Drawing.Point(527, 251);
+            this.AccountSinText.Name = "AccountSinText";
+            this.AccountSinText.Size = new System.Drawing.Size(150, 22);
+            this.AccountSinText.TabIndex = 42;
             // 
             // genderlb
             // 
@@ -438,6 +471,8 @@
             // 
             // charactersPage2
             // 
+            this.charactersPage2.Controls.Add(this.charatersSinbtn);
+            this.charactersPage2.Controls.Add(this.charactersSinText);
             this.charactersPage2.Controls.Add(this.UPDATEchBtn);
             this.charactersPage2.Controls.Add(this.chGMlb);
             this.charactersPage2.Controls.Add(this.chMaplb);
@@ -485,6 +520,23 @@
             this.charactersPage2.TabIndex = 1;
             this.charactersPage2.Text = "角色";
             this.charactersPage2.UseVisualStyleBackColor = true;
+            // 
+            // charatersSinbtn
+            // 
+            this.charatersSinbtn.Location = new System.Drawing.Point(679, 234);
+            this.charatersSinbtn.Name = "charatersSinbtn";
+            this.charatersSinbtn.Size = new System.Drawing.Size(95, 21);
+            this.charatersSinbtn.TabIndex = 41;
+            this.charatersSinbtn.Text = "載入單一角色";
+            this.charatersSinbtn.UseVisualStyleBackColor = true;
+            this.charatersSinbtn.Click += new System.EventHandler(this.CharatersSinbtn_Click);
+            // 
+            // charactersSinText
+            // 
+            this.charactersSinText.Location = new System.Drawing.Point(523, 234);
+            this.charactersSinText.Name = "charactersSinText";
+            this.charactersSinText.Size = new System.Drawing.Size(150, 22);
+            this.charactersSinText.TabIndex = 40;
             // 
             // UPDATEchBtn
             // 
@@ -854,6 +906,16 @@
             // 
             // chItemPage3
             // 
+            this.chItemPage3.Controls.Add(this.Itemquantitylb);
+            this.chItemPage3.Controls.Add(this.ItemquantityText);
+            this.chItemPage3.Controls.Add(this.Itemitempositionlb);
+            this.chItemPage3.Controls.Add(this.ItemitempositionText);
+            this.chItemPage3.Controls.Add(this.Iteminventorytypeb);
+            this.chItemPage3.Controls.Add(this.ItemiteminventorytypeText);
+            this.chItemPage3.Controls.Add(this.Itemitemidlb);
+            this.chItemPage3.Controls.Add(this.ItemitemidText);
+            this.chItemPage3.Controls.Add(this.Itemchidlb);
+            this.chItemPage3.Controls.Add(this.ItemchidText);
             this.chItemPage3.Controls.Add(this.chnameloadItemText);
             this.chItemPage3.Controls.Add(this.chItemloadSinbtn);
             this.chItemPage3.Controls.Add(this.UPDATEchItemBtn);
@@ -867,6 +929,43 @@
             this.chItemPage3.Text = "身上物品";
             this.chItemPage3.UseVisualStyleBackColor = true;
             // 
+            // chnameloadItemText
+            // 
+            this.chnameloadItemText.Location = new System.Drawing.Point(430, 390);
+            this.chnameloadItemText.Name = "chnameloadItemText";
+            this.chnameloadItemText.Size = new System.Drawing.Size(125, 22);
+            this.chnameloadItemText.TabIndex = 43;
+            // 
+            // chItemloadSinbtn
+            // 
+            this.chItemloadSinbtn.Location = new System.Drawing.Point(561, 385);
+            this.chItemloadSinbtn.Name = "chItemloadSinbtn";
+            this.chItemloadSinbtn.Size = new System.Drawing.Size(87, 29);
+            this.chItemloadSinbtn.TabIndex = 42;
+            this.chItemloadSinbtn.Text = "載入單一角色";
+            this.chItemloadSinbtn.UseVisualStyleBackColor = true;
+            this.chItemloadSinbtn.Click += new System.EventHandler(this.ChItemloadSinbtn_Click);
+            // 
+            // UPDATEchItemBtn
+            // 
+            this.UPDATEchItemBtn.Location = new System.Drawing.Point(696, 235);
+            this.UPDATEchItemBtn.Name = "UPDATEchItemBtn";
+            this.UPDATEchItemBtn.Size = new System.Drawing.Size(79, 29);
+            this.UPDATEchItemBtn.TabIndex = 41;
+            this.UPDATEchItemBtn.Text = "儲存修改";
+            this.UPDATEchItemBtn.UseVisualStyleBackColor = true;
+            this.UPDATEchItemBtn.Click += new System.EventHandler(this.UPDATEchItemBtn_Click);
+            // 
+            // chItemloadAllbtn
+            // 
+            this.chItemloadAllbtn.Location = new System.Drawing.Point(696, 385);
+            this.chItemloadAllbtn.Name = "chItemloadAllbtn";
+            this.chItemloadAllbtn.Size = new System.Drawing.Size(79, 29);
+            this.chItemloadAllbtn.TabIndex = 40;
+            this.chItemloadAllbtn.Text = "載入全部";
+            this.chItemloadAllbtn.UseVisualStyleBackColor = true;
+            this.chItemloadAllbtn.Click += new System.EventHandler(this.ChItemloadbtn_Click);
+            // 
             // chItemView
             // 
             this.chItemView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -875,6 +974,7 @@
             this.chItemView.RowTemplate.Height = 24;
             this.chItemView.Size = new System.Drawing.Size(780, 229);
             this.chItemView.TabIndex = 0;
+            this.chItemView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChItemView_CellClick);
             // 
             // tabPage4
             // 
@@ -1031,42 +1131,85 @@
             this.SqlNamelb.TabIndex = 12;
             this.SqlNamelb.Text = "資料庫名稱";
             // 
-            // UPDATEchItemBtn
+            // ItemchidText
             // 
-            this.UPDATEchItemBtn.Location = new System.Drawing.Point(696, 235);
-            this.UPDATEchItemBtn.Name = "UPDATEchItemBtn";
-            this.UPDATEchItemBtn.Size = new System.Drawing.Size(79, 29);
-            this.UPDATEchItemBtn.TabIndex = 41;
-            this.UPDATEchItemBtn.Text = "儲存修改";
-            this.UPDATEchItemBtn.UseVisualStyleBackColor = true;
-            this.UPDATEchItemBtn.Click += new System.EventHandler(this.UPDATEchItemBtn_Click);
+            this.ItemchidText.Location = new System.Drawing.Point(97, 240);
+            this.ItemchidText.Name = "ItemchidText";
+            this.ItemchidText.Size = new System.Drawing.Size(110, 22);
+            this.ItemchidText.TabIndex = 44;
             // 
-            // chItemloadAllbtn
+            // Itemchidlb
             // 
-            this.chItemloadAllbtn.Location = new System.Drawing.Point(696, 385);
-            this.chItemloadAllbtn.Name = "chItemloadAllbtn";
-            this.chItemloadAllbtn.Size = new System.Drawing.Size(79, 29);
-            this.chItemloadAllbtn.TabIndex = 40;
-            this.chItemloadAllbtn.Text = "載入全部";
-            this.chItemloadAllbtn.UseVisualStyleBackColor = true;
-            this.chItemloadAllbtn.Click += new System.EventHandler(this.ChItemloadbtn_Click);
+            this.Itemchidlb.AutoSize = true;
+            this.Itemchidlb.Location = new System.Drawing.Point(6, 245);
+            this.Itemchidlb.Name = "Itemchidlb";
+            this.Itemchidlb.Size = new System.Drawing.Size(65, 12);
+            this.Itemchidlb.TabIndex = 45;
+            this.Itemchidlb.Text = "角色ID編號";
             // 
-            // chItemloadSinbtn
+            // ItemitemidText
             // 
-            this.chItemloadSinbtn.Location = new System.Drawing.Point(561, 385);
-            this.chItemloadSinbtn.Name = "chItemloadSinbtn";
-            this.chItemloadSinbtn.Size = new System.Drawing.Size(87, 29);
-            this.chItemloadSinbtn.TabIndex = 42;
-            this.chItemloadSinbtn.Text = "載入單一角色";
-            this.chItemloadSinbtn.UseVisualStyleBackColor = true;
-            this.chItemloadSinbtn.Click += new System.EventHandler(this.ChItemloadSinbtn_Click);
+            this.ItemitemidText.Location = new System.Drawing.Point(97, 268);
+            this.ItemitemidText.Name = "ItemitemidText";
+            this.ItemitemidText.Size = new System.Drawing.Size(110, 22);
+            this.ItemitemidText.TabIndex = 46;
             // 
-            // chnameloadItemText
+            // Itemitemidlb
             // 
-            this.chnameloadItemText.Location = new System.Drawing.Point(430, 390);
-            this.chnameloadItemText.Name = "chnameloadItemText";
-            this.chnameloadItemText.Size = new System.Drawing.Size(125, 22);
-            this.chnameloadItemText.TabIndex = 43;
+            this.Itemitemidlb.AutoSize = true;
+            this.Itemitemidlb.Location = new System.Drawing.Point(6, 271);
+            this.Itemitemidlb.Name = "Itemitemidlb";
+            this.Itemitemidlb.Size = new System.Drawing.Size(41, 12);
+            this.Itemitemidlb.TabIndex = 47;
+            this.Itemitemidlb.Text = "物品ID";
+            // 
+            // ItemiteminventorytypeText
+            // 
+            this.ItemiteminventorytypeText.Location = new System.Drawing.Point(97, 296);
+            this.ItemiteminventorytypeText.Name = "ItemiteminventorytypeText";
+            this.ItemiteminventorytypeText.Size = new System.Drawing.Size(110, 22);
+            this.ItemiteminventorytypeText.TabIndex = 48;
+            // 
+            // Iteminventorytypeb
+            // 
+            this.Iteminventorytypeb.AutoSize = true;
+            this.Iteminventorytypeb.Location = new System.Drawing.Point(6, 299);
+            this.Iteminventorytypeb.Name = "Iteminventorytypeb";
+            this.Iteminventorytypeb.Size = new System.Drawing.Size(53, 12);
+            this.Iteminventorytypeb.TabIndex = 49;
+            this.Iteminventorytypeb.Text = "物品位置";
+            // 
+            // ItemitempositionText
+            // 
+            this.ItemitempositionText.Location = new System.Drawing.Point(97, 324);
+            this.ItemitempositionText.Name = "ItemitempositionText";
+            this.ItemitempositionText.Size = new System.Drawing.Size(110, 22);
+            this.ItemitempositionText.TabIndex = 50;
+            // 
+            // Itemitempositionlb
+            // 
+            this.Itemitempositionlb.AutoSize = true;
+            this.Itemitempositionlb.Location = new System.Drawing.Point(6, 327);
+            this.Itemitempositionlb.Name = "Itemitempositionlb";
+            this.Itemitempositionlb.Size = new System.Drawing.Size(77, 12);
+            this.Itemitempositionlb.TabIndex = 51;
+            this.Itemitempositionlb.Text = "欄位裡的位置";
+            // 
+            // ItemquantityText
+            // 
+            this.ItemquantityText.Location = new System.Drawing.Point(97, 352);
+            this.ItemquantityText.Name = "ItemquantityText";
+            this.ItemquantityText.Size = new System.Drawing.Size(110, 22);
+            this.ItemquantityText.TabIndex = 52;
+            // 
+            // Itemquantitylb
+            // 
+            this.Itemquantitylb.AutoSize = true;
+            this.Itemquantitylb.Location = new System.Drawing.Point(6, 355);
+            this.Itemquantitylb.Name = "Itemquantitylb";
+            this.Itemquantitylb.Size = new System.Drawing.Size(53, 12);
+            this.Itemquantitylb.TabIndex = 53;
+            this.Itemquantitylb.Text = "物品數量";
             // 
             // Form1
             // 
@@ -1195,6 +1338,20 @@
         private System.Windows.Forms.Button chItemloadAllbtn;
         private System.Windows.Forms.TextBox chnameloadItemText;
         private System.Windows.Forms.Button chItemloadSinbtn;
+        private System.Windows.Forms.Button charatersSinbtn;
+        private System.Windows.Forms.TextBox charactersSinText;
+        private System.Windows.Forms.Button AccountSinBtn;
+        private System.Windows.Forms.TextBox AccountSinText;
+        private System.Windows.Forms.Label Itemquantitylb;
+        private System.Windows.Forms.TextBox ItemquantityText;
+        private System.Windows.Forms.Label Itemitempositionlb;
+        private System.Windows.Forms.TextBox ItemitempositionText;
+        private System.Windows.Forms.Label Iteminventorytypeb;
+        private System.Windows.Forms.TextBox ItemiteminventorytypeText;
+        private System.Windows.Forms.Label Itemitemidlb;
+        private System.Windows.Forms.TextBox ItemitemidText;
+        private System.Windows.Forms.Label Itemchidlb;
+        private System.Windows.Forms.TextBox ItemchidText;
     }
 }
 
