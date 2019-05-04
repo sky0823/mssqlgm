@@ -103,6 +103,16 @@
             this.charactersbtn = new System.Windows.Forms.Button();
             this.charactersView = new System.Windows.Forms.DataGridView();
             this.chItemPage3 = new System.Windows.Forms.TabPage();
+            this.Itemquantitylb = new System.Windows.Forms.Label();
+            this.ItemquantityText = new System.Windows.Forms.TextBox();
+            this.Itemitempositionlb = new System.Windows.Forms.Label();
+            this.ItemitempositionText = new System.Windows.Forms.TextBox();
+            this.Iteminventorytypeb = new System.Windows.Forms.Label();
+            this.ItemiteminventorytypeText = new System.Windows.Forms.TextBox();
+            this.Itemitemidlb = new System.Windows.Forms.Label();
+            this.ItemitemidText = new System.Windows.Forms.TextBox();
+            this.Itemchidlb = new System.Windows.Forms.Label();
+            this.ItemchidText = new System.Windows.Forms.TextBox();
             this.chnameloadItemText = new System.Windows.Forms.TextBox();
             this.chItemloadSinbtn = new System.Windows.Forms.Button();
             this.UPDATEchItemBtn = new System.Windows.Forms.Button();
@@ -124,16 +134,6 @@
             this.Userlb = new System.Windows.Forms.Label();
             this.Userpasslb = new System.Windows.Forms.Label();
             this.SqlNamelb = new System.Windows.Forms.Label();
-            this.ItemchidText = new System.Windows.Forms.TextBox();
-            this.Itemchidlb = new System.Windows.Forms.Label();
-            this.ItemitemidText = new System.Windows.Forms.TextBox();
-            this.Itemitemidlb = new System.Windows.Forms.Label();
-            this.ItemiteminventorytypeText = new System.Windows.Forms.TextBox();
-            this.Iteminventorytypeb = new System.Windows.Forms.Label();
-            this.ItemitempositionText = new System.Windows.Forms.TextBox();
-            this.Itemitempositionlb = new System.Windows.Forms.Label();
-            this.ItemquantityText = new System.Windows.Forms.TextBox();
-            this.Itemquantitylb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
@@ -199,7 +199,7 @@
             this.NameText.Name = "NameText";
             this.NameText.Size = new System.Drawing.Size(84, 22);
             this.NameText.TabIndex = 5;
-            this.NameText.Text = "87maplestory";
+            this.NameText.Text = "123456";
             this.NameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PortText
@@ -929,6 +929,86 @@
             this.chItemPage3.Text = "身上物品";
             this.chItemPage3.UseVisualStyleBackColor = true;
             // 
+            // Itemquantitylb
+            // 
+            this.Itemquantitylb.AutoSize = true;
+            this.Itemquantitylb.Location = new System.Drawing.Point(6, 355);
+            this.Itemquantitylb.Name = "Itemquantitylb";
+            this.Itemquantitylb.Size = new System.Drawing.Size(53, 12);
+            this.Itemquantitylb.TabIndex = 53;
+            this.Itemquantitylb.Text = "物品數量";
+            // 
+            // ItemquantityText
+            // 
+            this.ItemquantityText.Location = new System.Drawing.Point(97, 352);
+            this.ItemquantityText.Name = "ItemquantityText";
+            this.ItemquantityText.Size = new System.Drawing.Size(110, 22);
+            this.ItemquantityText.TabIndex = 52;
+            // 
+            // Itemitempositionlb
+            // 
+            this.Itemitempositionlb.AutoSize = true;
+            this.Itemitempositionlb.Location = new System.Drawing.Point(6, 327);
+            this.Itemitempositionlb.Name = "Itemitempositionlb";
+            this.Itemitempositionlb.Size = new System.Drawing.Size(77, 12);
+            this.Itemitempositionlb.TabIndex = 51;
+            this.Itemitempositionlb.Text = "欄位裡的位置";
+            // 
+            // ItemitempositionText
+            // 
+            this.ItemitempositionText.Location = new System.Drawing.Point(97, 324);
+            this.ItemitempositionText.Name = "ItemitempositionText";
+            this.ItemitempositionText.Size = new System.Drawing.Size(110, 22);
+            this.ItemitempositionText.TabIndex = 50;
+            // 
+            // Iteminventorytypeb
+            // 
+            this.Iteminventorytypeb.AutoSize = true;
+            this.Iteminventorytypeb.Location = new System.Drawing.Point(6, 299);
+            this.Iteminventorytypeb.Name = "Iteminventorytypeb";
+            this.Iteminventorytypeb.Size = new System.Drawing.Size(53, 12);
+            this.Iteminventorytypeb.TabIndex = 49;
+            this.Iteminventorytypeb.Text = "物品位置";
+            // 
+            // ItemiteminventorytypeText
+            // 
+            this.ItemiteminventorytypeText.Location = new System.Drawing.Point(97, 296);
+            this.ItemiteminventorytypeText.Name = "ItemiteminventorytypeText";
+            this.ItemiteminventorytypeText.Size = new System.Drawing.Size(110, 22);
+            this.ItemiteminventorytypeText.TabIndex = 48;
+            // 
+            // Itemitemidlb
+            // 
+            this.Itemitemidlb.AutoSize = true;
+            this.Itemitemidlb.Location = new System.Drawing.Point(6, 271);
+            this.Itemitemidlb.Name = "Itemitemidlb";
+            this.Itemitemidlb.Size = new System.Drawing.Size(41, 12);
+            this.Itemitemidlb.TabIndex = 47;
+            this.Itemitemidlb.Text = "物品ID";
+            // 
+            // ItemitemidText
+            // 
+            this.ItemitemidText.Location = new System.Drawing.Point(97, 268);
+            this.ItemitemidText.Name = "ItemitemidText";
+            this.ItemitemidText.Size = new System.Drawing.Size(110, 22);
+            this.ItemitemidText.TabIndex = 46;
+            // 
+            // Itemchidlb
+            // 
+            this.Itemchidlb.AutoSize = true;
+            this.Itemchidlb.Location = new System.Drawing.Point(6, 245);
+            this.Itemchidlb.Name = "Itemchidlb";
+            this.Itemchidlb.Size = new System.Drawing.Size(65, 12);
+            this.Itemchidlb.TabIndex = 45;
+            this.Itemchidlb.Text = "角色ID編號";
+            // 
+            // ItemchidText
+            // 
+            this.ItemchidText.Location = new System.Drawing.Point(97, 240);
+            this.ItemchidText.Name = "ItemchidText";
+            this.ItemchidText.Size = new System.Drawing.Size(110, 22);
+            this.ItemchidText.TabIndex = 44;
+            // 
             // chnameloadItemText
             // 
             this.chnameloadItemText.Location = new System.Drawing.Point(430, 390);
@@ -1130,86 +1210,6 @@
             this.SqlNamelb.Size = new System.Drawing.Size(65, 12);
             this.SqlNamelb.TabIndex = 12;
             this.SqlNamelb.Text = "資料庫名稱";
-            // 
-            // ItemchidText
-            // 
-            this.ItemchidText.Location = new System.Drawing.Point(97, 240);
-            this.ItemchidText.Name = "ItemchidText";
-            this.ItemchidText.Size = new System.Drawing.Size(110, 22);
-            this.ItemchidText.TabIndex = 44;
-            // 
-            // Itemchidlb
-            // 
-            this.Itemchidlb.AutoSize = true;
-            this.Itemchidlb.Location = new System.Drawing.Point(6, 245);
-            this.Itemchidlb.Name = "Itemchidlb";
-            this.Itemchidlb.Size = new System.Drawing.Size(65, 12);
-            this.Itemchidlb.TabIndex = 45;
-            this.Itemchidlb.Text = "角色ID編號";
-            // 
-            // ItemitemidText
-            // 
-            this.ItemitemidText.Location = new System.Drawing.Point(97, 268);
-            this.ItemitemidText.Name = "ItemitemidText";
-            this.ItemitemidText.Size = new System.Drawing.Size(110, 22);
-            this.ItemitemidText.TabIndex = 46;
-            // 
-            // Itemitemidlb
-            // 
-            this.Itemitemidlb.AutoSize = true;
-            this.Itemitemidlb.Location = new System.Drawing.Point(6, 271);
-            this.Itemitemidlb.Name = "Itemitemidlb";
-            this.Itemitemidlb.Size = new System.Drawing.Size(41, 12);
-            this.Itemitemidlb.TabIndex = 47;
-            this.Itemitemidlb.Text = "物品ID";
-            // 
-            // ItemiteminventorytypeText
-            // 
-            this.ItemiteminventorytypeText.Location = new System.Drawing.Point(97, 296);
-            this.ItemiteminventorytypeText.Name = "ItemiteminventorytypeText";
-            this.ItemiteminventorytypeText.Size = new System.Drawing.Size(110, 22);
-            this.ItemiteminventorytypeText.TabIndex = 48;
-            // 
-            // Iteminventorytypeb
-            // 
-            this.Iteminventorytypeb.AutoSize = true;
-            this.Iteminventorytypeb.Location = new System.Drawing.Point(6, 299);
-            this.Iteminventorytypeb.Name = "Iteminventorytypeb";
-            this.Iteminventorytypeb.Size = new System.Drawing.Size(53, 12);
-            this.Iteminventorytypeb.TabIndex = 49;
-            this.Iteminventorytypeb.Text = "物品位置";
-            // 
-            // ItemitempositionText
-            // 
-            this.ItemitempositionText.Location = new System.Drawing.Point(97, 324);
-            this.ItemitempositionText.Name = "ItemitempositionText";
-            this.ItemitempositionText.Size = new System.Drawing.Size(110, 22);
-            this.ItemitempositionText.TabIndex = 50;
-            // 
-            // Itemitempositionlb
-            // 
-            this.Itemitempositionlb.AutoSize = true;
-            this.Itemitempositionlb.Location = new System.Drawing.Point(6, 327);
-            this.Itemitempositionlb.Name = "Itemitempositionlb";
-            this.Itemitempositionlb.Size = new System.Drawing.Size(77, 12);
-            this.Itemitempositionlb.TabIndex = 51;
-            this.Itemitempositionlb.Text = "欄位裡的位置";
-            // 
-            // ItemquantityText
-            // 
-            this.ItemquantityText.Location = new System.Drawing.Point(97, 352);
-            this.ItemquantityText.Name = "ItemquantityText";
-            this.ItemquantityText.Size = new System.Drawing.Size(110, 22);
-            this.ItemquantityText.TabIndex = 52;
-            // 
-            // Itemquantitylb
-            // 
-            this.Itemquantitylb.AutoSize = true;
-            this.Itemquantitylb.Location = new System.Drawing.Point(6, 355);
-            this.Itemquantitylb.Name = "Itemquantitylb";
-            this.Itemquantitylb.Size = new System.Drawing.Size(53, 12);
-            this.Itemquantitylb.TabIndex = 53;
-            this.Itemquantitylb.Text = "物品數量";
             // 
             // Form1
             // 

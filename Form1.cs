@@ -279,7 +279,7 @@ namespace MySqlT
             ItemchidText.Text = Rvview("inventoryitem", 1);
             ItemitemidText.Text = Rvview("inventoryitem", 4);
             //ItemiteminventorytypeText.Text = Rvview("inventoryitem", 5);
-            ItemitempositionText.Text = Rvview("inventoryitem", 6);
+            //ItemitempositionText.Text = Rvview("inventoryitem", 6);
             ItemquantityText.Text = Rvview("inventoryitem", 7);
             switch (Rvview("inventoryitem", 5))
             {
@@ -300,6 +300,66 @@ namespace MySqlT
                     break;
                 case "5":
                     ItemiteminventorytypeText.Text = "特殊";
+                    break;
+            }
+            switch(Rvview("inventoryitem", 6))
+            {
+                case "-5":
+                    ItemitempositionText.Text = "上衣/套服";
+                    break;
+                case "-6":
+                    ItemitempositionText.Text = "褲子";
+                    break;
+                case "-7":
+                    ItemitempositionText.Text = "鞋子";
+                    break;
+                case "-11":
+                    ItemitempositionText.Text = "武器";
+                    break;
+                case "-101":
+                    ItemitempositionText.Text = "點數-帽子";
+                    break;
+                case "-102":
+                    ItemitempositionText.Text = "點數-臉飾";
+                    break;
+                case "-103":
+                    ItemitempositionText.Text = "點數-眼飾";
+                    break;
+                case "-105":
+                    ItemitempositionText.Text = "點數-上衣/套服";
+                    break;
+                case "-106":
+                    ItemitempositionText.Text = "點數-褲子";
+                    break;
+                case "-107":
+                    ItemitempositionText.Text = "點數-鞋子";
+                    break;
+                case "-108":
+                    ItemitempositionText.Text = "點數-手套";
+                    break;
+                case "-109":
+                    ItemitempositionText.Text = "點數-披風";
+                    break;
+                case "-111":
+                    ItemitempositionText.Text = "點數-武器";
+                    break;
+                case "-112":
+                    ItemitempositionText.Text = "點數-戒指左下";
+                    break;
+                case "-113":
+                    ItemitempositionText.Text = "點數-戒指右下";
+                    break;
+                case "-114":
+                    ItemitempositionText.Text = "點數-寵物裝備";
+                    break;
+                case "-115":
+                    ItemitempositionText.Text = "點數-戒指左上";
+                    break;
+                case "-116":
+                    ItemitempositionText.Text = "點數-戒指右上";
+                    break;
+                default:
+                    ItemitempositionText.Text = "第"+ Rvview("inventoryitem", 6)+"格";
                     break;
             }
 
