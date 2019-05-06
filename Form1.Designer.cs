@@ -134,6 +134,8 @@
             this.Userlb = new System.Windows.Forms.Label();
             this.Userpasslb = new System.Windows.Forms.Label();
             this.SqlNamelb = new System.Windows.Forms.Label();
+            this.IteminventoryitemidText = new System.Windows.Forms.TextBox();
+            this.ItemIteminventoryitemidTextlb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
@@ -386,6 +388,7 @@
             this.mPointsText.TabIndex = 11;
             this.mPointsText.Text = "楓葉點數";
             this.mPointsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mPointsText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MPointsText_KeyPress);
             // 
             // ACashText
             // 
@@ -709,6 +712,7 @@
             this.chGmText.TabIndex = 21;
             this.chGmText.Text = "角色GM等級";
             this.chGmText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chGmText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChGmText_KeyPress);
             // 
             // chMapText
             // 
@@ -718,6 +722,7 @@
             this.chMapText.TabIndex = 20;
             this.chMapText.Text = "角色地圖";
             this.chMapText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chMapText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChMapText_KeyPress);
             // 
             // chSpText
             // 
@@ -736,6 +741,7 @@
             this.chApText.TabIndex = 18;
             this.chApText.Text = "角色能力點";
             this.chApText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chApText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChApText_KeyPress);
             // 
             // chJobText
             // 
@@ -754,6 +760,7 @@
             this.chMesoText.TabIndex = 16;
             this.chMesoText.Text = "角色楓幣";
             this.chMesoText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chMesoText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChMesoText_KeyPress);
             // 
             // chMaxmpText
             // 
@@ -763,6 +770,7 @@
             this.chMaxmpText.TabIndex = 15;
             this.chMaxmpText.Text = "角色魔量上限";
             this.chMaxmpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chMaxmpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChMaxmpText_KeyPress);
             // 
             // chMaxhpText
             // 
@@ -772,6 +780,7 @@
             this.chMaxhpText.TabIndex = 14;
             this.chMaxhpText.Text = "角色血量上限";
             this.chMaxhpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chMaxhpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChMaxhpText_KeyPress);
             // 
             // chMpText
             // 
@@ -781,6 +790,7 @@
             this.chMpText.TabIndex = 13;
             this.chMpText.Text = "角色魔量";
             this.chMpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chMpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChMpText_KeyPress);
             // 
             // chHpText
             // 
@@ -790,6 +800,7 @@
             this.chHpText.TabIndex = 12;
             this.chHpText.Text = "角色血量";
             this.chHpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chHpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChHpText_KeyPress);
             // 
             // chIntText
             // 
@@ -799,6 +810,7 @@
             this.chIntText.TabIndex = 11;
             this.chIntText.Text = "角色智力";
             this.chIntText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chIntText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChIntText_KeyPress);
             // 
             // chLukText
             // 
@@ -808,6 +820,7 @@
             this.chLukText.TabIndex = 10;
             this.chLukText.Text = "角色幸運";
             this.chLukText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chLukText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChLukText_KeyPress);
             // 
             // chDexText
             // 
@@ -817,6 +830,7 @@
             this.chDexText.TabIndex = 9;
             this.chDexText.Text = "角色敏捷";
             this.chDexText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chDexText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChDexText_KeyPress);
             // 
             // chStrText
             // 
@@ -826,6 +840,7 @@
             this.chStrText.TabIndex = 8;
             this.chStrText.Text = "角色力量";
             this.chStrText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chStrText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChStrText_KeyPress);
             // 
             // chExpText
             // 
@@ -835,6 +850,7 @@
             this.chExpText.TabIndex = 7;
             this.chExpText.Text = "角色經驗";
             this.chExpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chExpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChExpText_KeyPress);
             // 
             // chLevelText
             // 
@@ -857,7 +873,7 @@
             // Worldlb
             // 
             this.Worldlb.AutoSize = true;
-            this.Worldlb.Location = new System.Drawing.Point(124, 235);
+            this.Worldlb.Location = new System.Drawing.Point(262, 234);
             this.Worldlb.Name = "Worldlb";
             this.Worldlb.Size = new System.Drawing.Size(35, 12);
             this.Worldlb.TabIndex = 4;
@@ -867,7 +883,7 @@
             // accountidlb
             // 
             this.accountidlb.AutoSize = true;
-            this.accountidlb.Location = new System.Drawing.Point(51, 235);
+            this.accountidlb.Location = new System.Drawing.Point(142, 234);
             this.accountidlb.Name = "accountidlb";
             this.accountidlb.Size = new System.Drawing.Size(50, 12);
             this.accountidlb.TabIndex = 3;
@@ -906,6 +922,8 @@
             // 
             // chItemPage3
             // 
+            this.chItemPage3.Controls.Add(this.ItemIteminventoryitemidTextlb);
+            this.chItemPage3.Controls.Add(this.IteminventoryitemidText);
             this.chItemPage3.Controls.Add(this.Itemquantitylb);
             this.chItemPage3.Controls.Add(this.ItemquantityText);
             this.chItemPage3.Controls.Add(this.Itemitempositionlb);
@@ -932,7 +950,7 @@
             // Itemquantitylb
             // 
             this.Itemquantitylb.AutoSize = true;
-            this.Itemquantitylb.Location = new System.Drawing.Point(6, 355);
+            this.Itemquantitylb.Location = new System.Drawing.Point(6, 388);
             this.Itemquantitylb.Name = "Itemquantitylb";
             this.Itemquantitylb.Size = new System.Drawing.Size(53, 12);
             this.Itemquantitylb.TabIndex = 53;
@@ -940,15 +958,17 @@
             // 
             // ItemquantityText
             // 
-            this.ItemquantityText.Location = new System.Drawing.Point(97, 352);
+            this.ItemquantityText.Location = new System.Drawing.Point(97, 385);
             this.ItemquantityText.Name = "ItemquantityText";
             this.ItemquantityText.Size = new System.Drawing.Size(110, 22);
             this.ItemquantityText.TabIndex = 52;
+            this.ItemquantityText.Text = "物品數量";
+            this.ItemquantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemquantityText_KeyPress);
             // 
             // Itemitempositionlb
             // 
             this.Itemitempositionlb.AutoSize = true;
-            this.Itemitempositionlb.Location = new System.Drawing.Point(6, 327);
+            this.Itemitempositionlb.Location = new System.Drawing.Point(6, 360);
             this.Itemitempositionlb.Name = "Itemitempositionlb";
             this.Itemitempositionlb.Size = new System.Drawing.Size(77, 12);
             this.Itemitempositionlb.TabIndex = 51;
@@ -956,15 +976,17 @@
             // 
             // ItemitempositionText
             // 
-            this.ItemitempositionText.Location = new System.Drawing.Point(97, 324);
+            this.ItemitempositionText.Location = new System.Drawing.Point(97, 357);
             this.ItemitempositionText.Name = "ItemitempositionText";
+            this.ItemitempositionText.ReadOnly = true;
             this.ItemitempositionText.Size = new System.Drawing.Size(110, 22);
             this.ItemitempositionText.TabIndex = 50;
+            this.ItemitempositionText.Text = "欄位裡的位置";
             // 
             // Iteminventorytypeb
             // 
             this.Iteminventorytypeb.AutoSize = true;
-            this.Iteminventorytypeb.Location = new System.Drawing.Point(6, 299);
+            this.Iteminventorytypeb.Location = new System.Drawing.Point(6, 332);
             this.Iteminventorytypeb.Name = "Iteminventorytypeb";
             this.Iteminventorytypeb.Size = new System.Drawing.Size(53, 12);
             this.Iteminventorytypeb.TabIndex = 49;
@@ -972,15 +994,17 @@
             // 
             // ItemiteminventorytypeText
             // 
-            this.ItemiteminventorytypeText.Location = new System.Drawing.Point(97, 296);
+            this.ItemiteminventorytypeText.Location = new System.Drawing.Point(97, 329);
             this.ItemiteminventorytypeText.Name = "ItemiteminventorytypeText";
+            this.ItemiteminventorytypeText.ReadOnly = true;
             this.ItemiteminventorytypeText.Size = new System.Drawing.Size(110, 22);
             this.ItemiteminventorytypeText.TabIndex = 48;
+            this.ItemiteminventorytypeText.Text = "物品位置";
             // 
             // Itemitemidlb
             // 
             this.Itemitemidlb.AutoSize = true;
-            this.Itemitemidlb.Location = new System.Drawing.Point(6, 271);
+            this.Itemitemidlb.Location = new System.Drawing.Point(6, 304);
             this.Itemitemidlb.Name = "Itemitemidlb";
             this.Itemitemidlb.Size = new System.Drawing.Size(41, 12);
             this.Itemitemidlb.TabIndex = 47;
@@ -988,15 +1012,18 @@
             // 
             // ItemitemidText
             // 
-            this.ItemitemidText.Location = new System.Drawing.Point(97, 268);
+            this.ItemitemidText.Location = new System.Drawing.Point(97, 301);
             this.ItemitemidText.Name = "ItemitemidText";
+            this.ItemitemidText.ReadOnly = true;
             this.ItemitemidText.Size = new System.Drawing.Size(110, 22);
             this.ItemitemidText.TabIndex = 46;
+            this.ItemitemidText.Text = "物品ID";
+            this.ItemitemidText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemitemidText_KeyPress);
             // 
             // Itemchidlb
             // 
             this.Itemchidlb.AutoSize = true;
-            this.Itemchidlb.Location = new System.Drawing.Point(6, 245);
+            this.Itemchidlb.Location = new System.Drawing.Point(6, 278);
             this.Itemchidlb.Name = "Itemchidlb";
             this.Itemchidlb.Size = new System.Drawing.Size(65, 12);
             this.Itemchidlb.TabIndex = 45;
@@ -1004,10 +1031,13 @@
             // 
             // ItemchidText
             // 
-            this.ItemchidText.Location = new System.Drawing.Point(97, 240);
+            this.ItemchidText.Location = new System.Drawing.Point(97, 273);
             this.ItemchidText.Name = "ItemchidText";
+            this.ItemchidText.ReadOnly = true;
             this.ItemchidText.Size = new System.Drawing.Size(110, 22);
             this.ItemchidText.TabIndex = 44;
+            this.ItemchidText.Text = "角色ID編號";
+            this.ItemchidText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemchidText_KeyPress);
             // 
             // chnameloadItemText
             // 
@@ -1211,6 +1241,24 @@
             this.SqlNamelb.TabIndex = 12;
             this.SqlNamelb.Text = "資料庫名稱";
             // 
+            // IteminventoryitemidText
+            // 
+            this.IteminventoryitemidText.Location = new System.Drawing.Point(97, 240);
+            this.IteminventoryitemidText.Name = "IteminventoryitemidText";
+            this.IteminventoryitemidText.ReadOnly = true;
+            this.IteminventoryitemidText.Size = new System.Drawing.Size(110, 22);
+            this.IteminventoryitemidText.TabIndex = 54;
+            this.IteminventoryitemidText.Text = "物品當前編號";
+            // 
+            // ItemIteminventoryitemidTextlb
+            // 
+            this.ItemIteminventoryitemidTextlb.AutoSize = true;
+            this.ItemIteminventoryitemidTextlb.Location = new System.Drawing.Point(6, 243);
+            this.ItemIteminventoryitemidTextlb.Name = "ItemIteminventoryitemidTextlb";
+            this.ItemIteminventoryitemidTextlb.Size = new System.Drawing.Size(77, 12);
+            this.ItemIteminventoryitemidTextlb.TabIndex = 55;
+            this.ItemIteminventoryitemidTextlb.Text = "物品當前編號";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1352,6 +1400,8 @@
         private System.Windows.Forms.TextBox ItemitemidText;
         private System.Windows.Forms.Label Itemchidlb;
         private System.Windows.Forms.TextBox ItemchidText;
+        private System.Windows.Forms.TextBox IteminventoryitemidText;
+        private System.Windows.Forms.Label ItemIteminventoryitemidTextlb;
     }
 }
 

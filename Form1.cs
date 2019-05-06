@@ -165,15 +165,14 @@ namespace MySqlT
             return "error";
         }
 
-        private void UPDATEBsql(string s)
+        private void UPDATEBsql(string s , string rindex)
         {
             string dbHost = HostText.Text;
             string dbUser = UserText.Text;
             string dbPass = PassText.Text;
             string dbName = NameText.Text;
             string dbPort = PortText.Text;
-            string rindex = AccountsView.Rows[AccountsView.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            // 如果有特殊的編碼在database後面請加上;CharSet=編碼, utf8請使用utf8_general_ci 
+                        // 如果有特殊的編碼在database後面請加上;CharSet=編碼, utf8請使用utf8_general_ci 
             string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
             MySqlConnection conn = new MySqlConnection(connStr);
             String strsql = "UPDATE `" + s + "` SET `ACash`='" + ACashText.Text + "',"
@@ -187,7 +186,10 @@ namespace MySqlT
                             + "',`maxmp`='" + chMaxmpText.Text + "',`meso`='" + chMesoText.Text + "',`job`='" + chJobText.Text
                             + "',`ap`='" + chApText.Text + "',`map`='" + chMapText.Text + "',`gm`='" + chGmText.Text
                             + "',`sp`='" + chSpText.Text + ",0,0,0,0,0,0,0,0,0' WHERE (`id`='" + rindex + "')";
-            String chItemstrsql = "UPDATE `" + s + "` SET";
+            String chItemstrsql = "UPDATE `inventoryitems` SET `quantity`='"+ ItemquantityText.Text
+                            + "' WHERE (`inventoryitemid`='" + IteminventoryitemidText.Text + "')  ";/*"UPDATE `" + s + "` SET `itemid`="+ItemitemidText.Text 
+                            + "',`quantity`='" + ItemquantityText.Text
+                            + "' WHERE (`inventoryitemid`='" + IteminventoryitemidText.Text + "')";*/
 
             // 連線到資料庫 
             try
@@ -256,6 +258,9 @@ namespace MySqlT
 
         private void CharactersView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            chIDlb.Text= "角色編號: " + Rvview("characters", 0);
+            accountidlb.Text = "帳號編號: "+ Rvview("characters", 1);
+            //Worldlb.Text = Rvview("characters", 2);
             chnameText.Text = Rvview("characters", 3);
             chLevelText.Text = Rvview("characters", 4);
             chExpText.Text = Rvview("characters", 5);
@@ -273,14 +278,16 @@ namespace MySqlT
             chMesoText.Text = Rvview("characters", 14);
             chMapText.Text = Rvview("characters", 23);
             chGmText.Text = Rvview("characters", 25);
+
         }
         private void ChItemView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            IteminventoryitemidText.Text= Rvview("inventoryitem", 0);
             ItemchidText.Text = Rvview("inventoryitem", 1);
             ItemitemidText.Text = Rvview("inventoryitem", 4);
             //ItemiteminventorytypeText.Text = Rvview("inventoryitem", 5);
             //ItemitempositionText.Text = Rvview("inventoryitem", 6);
-            ItemquantityText.Text = Rvview("inventoryitem", 7);
+            ItemquantityText.Text = Rvview("inventoryitem", 7);            
             switch (Rvview("inventoryitem", 5))
             {
                 case "-1":
@@ -379,7 +386,10 @@ namespace MySqlT
         private void UPDATEaccBtn_Click(object sender, EventArgs e)
         {
             if (AccountsText.Text != "帳號")
-                UPDATEBsql("accounts");
+            { 
+                string rindex = AccountsView.Rows[AccountsView.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                UPDATEBsql("accounts", rindex);
+            }
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
@@ -397,7 +407,10 @@ namespace MySqlT
         private void UPDATEchBtn_Click(object sender, EventArgs e)
         {
             if (chLevelText.Text != "角色等級")
-                UPDATEBsql("characters");
+            {
+                string rindex = charactersView.Rows[charactersView.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                UPDATEBsql("characters", rindex);
+            }
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
@@ -407,8 +420,8 @@ namespace MySqlT
         }
         private void UPDATEchItemBtn_Click(object sender, EventArgs e)
         {
-            if (chLevelText.Text != "角色等級")
-                UPDATEBsql("inventoryitems");
+            if (IteminventoryitemidText.Text != "物品當前編號")
+                UPDATEBsql("inventoryitems","");
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
@@ -423,7 +436,116 @@ namespace MySqlT
 
 
 
+
+
+
+
+
+
         //--------------------------------------------------------------------------------------------------------
+        void Num_Only(KeyPressEventArgs e)
+        {
+            int a = e.KeyChar;
+            e.Handled = true;
+            if (a >= 48 && a <= 57) e.Handled = false;
+            if (a == 13) e.Handled = false;
+            if (a == 127) e.Handled = false;
+            if (a == 8) e.Handled = false;
+        }
+        private void MPointsText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ACashText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChLevelText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChStrText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChLukText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChDexText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChIntText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChApText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChMesoText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChExpText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChHpText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChMpText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChMaxhpText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChMaxmpText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChGmText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ChMapText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ItemitemidText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ItemquantityText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
+
+        private void ItemchidText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Num_Only(e);
+        }
     }
 }
 
