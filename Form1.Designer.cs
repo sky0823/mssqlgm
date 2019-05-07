@@ -103,6 +103,8 @@
             this.charactersbtn = new System.Windows.Forms.Button();
             this.charactersView = new System.Windows.Forms.DataGridView();
             this.chItemPage3 = new System.Windows.Forms.TabPage();
+            this.ItemIteminventoryitemidTextlb = new System.Windows.Forms.Label();
+            this.IteminventoryitemidText = new System.Windows.Forms.TextBox();
             this.Itemquantitylb = new System.Windows.Forms.Label();
             this.ItemquantityText = new System.Windows.Forms.TextBox();
             this.Itemitempositionlb = new System.Windows.Forms.Label();
@@ -118,7 +120,45 @@
             this.UPDATEchItemBtn = new System.Windows.Forms.Button();
             this.chItemloadAllbtn = new System.Windows.Forms.Button();
             this.chItemView = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chEquipPage4 = new System.Windows.Forms.TabPage();
+            this.EquipJumplb = new System.Windows.Forms.Label();
+            this.EquipJumpText = new System.Windows.Forms.TextBox();
+            this.EquipSpeedlb = new System.Windows.Forms.Label();
+            this.EquipSpeedText = new System.Windows.Forms.TextBox();
+            this.EquipAvoidlb = new System.Windows.Forms.Label();
+            this.EquipAvoidText = new System.Windows.Forms.TextBox();
+            this.EquipAcclb = new System.Windows.Forms.Label();
+            this.EquipAccText = new System.Windows.Forms.TextBox();
+            this.EquipMdeflb = new System.Windows.Forms.Label();
+            this.EquipMdefText = new System.Windows.Forms.TextBox();
+            this.EquipWdeflb = new System.Windows.Forms.Label();
+            this.EquipWdefText = new System.Windows.Forms.TextBox();
+            this.EquipMatklb = new System.Windows.Forms.Label();
+            this.EquipMatkText = new System.Windows.Forms.TextBox();
+            this.EquipWatklb = new System.Windows.Forms.Label();
+            this.EquipWatkText = new System.Windows.Forms.TextBox();
+            this.EquipMplb = new System.Windows.Forms.Label();
+            this.EquipMpText = new System.Windows.Forms.TextBox();
+            this.EquipHplb = new System.Windows.Forms.Label();
+            this.EquipHpText = new System.Windows.Forms.TextBox();
+            this.EquipLuklb = new System.Windows.Forms.Label();
+            this.EquipLukText = new System.Windows.Forms.TextBox();
+            this.EquipIntlb = new System.Windows.Forms.Label();
+            this.EquipIntText = new System.Windows.Forms.TextBox();
+            this.EquipDexlb = new System.Windows.Forms.Label();
+            this.EquipDexText = new System.Windows.Forms.TextBox();
+            this.EquipStrlb = new System.Windows.Forms.Label();
+            this.EquipStrText = new System.Windows.Forms.TextBox();
+            this.Equiplevellb = new System.Windows.Forms.Label();
+            this.Equipupgradeslotslb = new System.Windows.Forms.Label();
+            this.EquipupgradeslotsText = new System.Windows.Forms.TextBox();
+            this.Equipinventoryitemidlb = new System.Windows.Forms.Label();
+            this.Equipinventoryequipmentidlb = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chEquiploadSinbtn = new System.Windows.Forms.Button();
+            this.UPDATEchEquipBtn = new System.Windows.Forms.Button();
+            this.chEquiploadAllbtn = new System.Windows.Forms.Button();
+            this.chEquipView = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -134,8 +174,6 @@
             this.Userlb = new System.Windows.Forms.Label();
             this.Userpasslb = new System.Windows.Forms.Label();
             this.SqlNamelb = new System.Windows.Forms.Label();
-            this.IteminventoryitemidText = new System.Windows.Forms.TextBox();
-            this.ItemIteminventoryitemidTextlb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).BeginInit();
             this.Accountstab.SuspendLayout();
             this.AccountsPage1.SuspendLayout();
@@ -143,6 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.charactersView)).BeginInit();
             this.chItemPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chItemView)).BeginInit();
+            this.chEquipPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chEquipView)).BeginInit();
             this.SuspendLayout();
             // 
             // Loadaccbtn
@@ -219,7 +259,7 @@
             this.Accountstab.Controls.Add(this.AccountsPage1);
             this.Accountstab.Controls.Add(this.charactersPage2);
             this.Accountstab.Controls.Add(this.chItemPage3);
-            this.Accountstab.Controls.Add(this.tabPage4);
+            this.Accountstab.Controls.Add(this.chEquipPage4);
             this.Accountstab.Controls.Add(this.tabPage5);
             this.Accountstab.Controls.Add(this.tabPage6);
             this.Accountstab.Controls.Add(this.tabPage7);
@@ -947,6 +987,24 @@
             this.chItemPage3.Text = "身上物品";
             this.chItemPage3.UseVisualStyleBackColor = true;
             // 
+            // ItemIteminventoryitemidTextlb
+            // 
+            this.ItemIteminventoryitemidTextlb.AutoSize = true;
+            this.ItemIteminventoryitemidTextlb.Location = new System.Drawing.Point(6, 243);
+            this.ItemIteminventoryitemidTextlb.Name = "ItemIteminventoryitemidTextlb";
+            this.ItemIteminventoryitemidTextlb.Size = new System.Drawing.Size(77, 12);
+            this.ItemIteminventoryitemidTextlb.TabIndex = 55;
+            this.ItemIteminventoryitemidTextlb.Text = "物品當前編號";
+            // 
+            // IteminventoryitemidText
+            // 
+            this.IteminventoryitemidText.Location = new System.Drawing.Point(97, 240);
+            this.IteminventoryitemidText.Name = "IteminventoryitemidText";
+            this.IteminventoryitemidText.ReadOnly = true;
+            this.IteminventoryitemidText.Size = new System.Drawing.Size(110, 22);
+            this.IteminventoryitemidText.TabIndex = 54;
+            this.IteminventoryitemidText.Text = "物品當前編號";
+            // 
             // Itemquantitylb
             // 
             this.Itemquantitylb.AutoSize = true;
@@ -1086,15 +1144,383 @@
             this.chItemView.TabIndex = 0;
             this.chItemView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChItemView_CellClick);
             // 
-            // tabPage4
+            // chEquipPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(782, 421);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.chEquipPage4.Controls.Add(this.EquipJumplb);
+            this.chEquipPage4.Controls.Add(this.EquipJumpText);
+            this.chEquipPage4.Controls.Add(this.EquipSpeedlb);
+            this.chEquipPage4.Controls.Add(this.EquipSpeedText);
+            this.chEquipPage4.Controls.Add(this.EquipAvoidlb);
+            this.chEquipPage4.Controls.Add(this.EquipAvoidText);
+            this.chEquipPage4.Controls.Add(this.EquipAcclb);
+            this.chEquipPage4.Controls.Add(this.EquipAccText);
+            this.chEquipPage4.Controls.Add(this.EquipMdeflb);
+            this.chEquipPage4.Controls.Add(this.EquipMdefText);
+            this.chEquipPage4.Controls.Add(this.EquipWdeflb);
+            this.chEquipPage4.Controls.Add(this.EquipWdefText);
+            this.chEquipPage4.Controls.Add(this.EquipMatklb);
+            this.chEquipPage4.Controls.Add(this.EquipMatkText);
+            this.chEquipPage4.Controls.Add(this.EquipWatklb);
+            this.chEquipPage4.Controls.Add(this.EquipWatkText);
+            this.chEquipPage4.Controls.Add(this.EquipMplb);
+            this.chEquipPage4.Controls.Add(this.EquipMpText);
+            this.chEquipPage4.Controls.Add(this.EquipHplb);
+            this.chEquipPage4.Controls.Add(this.EquipHpText);
+            this.chEquipPage4.Controls.Add(this.EquipLuklb);
+            this.chEquipPage4.Controls.Add(this.EquipLukText);
+            this.chEquipPage4.Controls.Add(this.EquipIntlb);
+            this.chEquipPage4.Controls.Add(this.EquipIntText);
+            this.chEquipPage4.Controls.Add(this.EquipDexlb);
+            this.chEquipPage4.Controls.Add(this.EquipDexText);
+            this.chEquipPage4.Controls.Add(this.EquipStrlb);
+            this.chEquipPage4.Controls.Add(this.EquipStrText);
+            this.chEquipPage4.Controls.Add(this.Equiplevellb);
+            this.chEquipPage4.Controls.Add(this.Equipupgradeslotslb);
+            this.chEquipPage4.Controls.Add(this.EquipupgradeslotsText);
+            this.chEquipPage4.Controls.Add(this.Equipinventoryitemidlb);
+            this.chEquipPage4.Controls.Add(this.Equipinventoryequipmentidlb);
+            this.chEquipPage4.Controls.Add(this.textBox1);
+            this.chEquipPage4.Controls.Add(this.chEquiploadSinbtn);
+            this.chEquipPage4.Controls.Add(this.UPDATEchEquipBtn);
+            this.chEquipPage4.Controls.Add(this.chEquiploadAllbtn);
+            this.chEquipPage4.Controls.Add(this.chEquipView);
+            this.chEquipPage4.Location = new System.Drawing.Point(4, 22);
+            this.chEquipPage4.Name = "chEquipPage4";
+            this.chEquipPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.chEquipPage4.Size = new System.Drawing.Size(782, 421);
+            this.chEquipPage4.TabIndex = 3;
+            this.chEquipPage4.Text = "角色裝備";
+            this.chEquipPage4.UseVisualStyleBackColor = true;
+            // 
+            // EquipJumplb
+            // 
+            this.EquipJumplb.AutoSize = true;
+            this.EquipJumplb.Location = new System.Drawing.Point(343, 376);
+            this.EquipJumplb.Name = "EquipJumplb";
+            this.EquipJumplb.Size = new System.Drawing.Size(29, 12);
+            this.EquipJumplb.TabIndex = 80;
+            this.EquipJumplb.Text = "跳躍";
+            // 
+            // EquipJumpText
+            // 
+            this.EquipJumpText.Location = new System.Drawing.Point(395, 373);
+            this.EquipJumpText.Name = "EquipJumpText";
+            this.EquipJumpText.Size = new System.Drawing.Size(94, 22);
+            this.EquipJumpText.TabIndex = 79;
+            this.EquipJumpText.Text = "跳躍";
+            // 
+            // EquipSpeedlb
+            // 
+            this.EquipSpeedlb.AutoSize = true;
+            this.EquipSpeedlb.Location = new System.Drawing.Point(343, 349);
+            this.EquipSpeedlb.Name = "EquipSpeedlb";
+            this.EquipSpeedlb.Size = new System.Drawing.Size(29, 12);
+            this.EquipSpeedlb.TabIndex = 78;
+            this.EquipSpeedlb.Text = "速度";
+            // 
+            // EquipSpeedText
+            // 
+            this.EquipSpeedText.Location = new System.Drawing.Point(395, 346);
+            this.EquipSpeedText.Name = "EquipSpeedText";
+            this.EquipSpeedText.Size = new System.Drawing.Size(94, 22);
+            this.EquipSpeedText.TabIndex = 77;
+            this.EquipSpeedText.Text = "速度";
+            // 
+            // EquipAvoidlb
+            // 
+            this.EquipAvoidlb.AutoSize = true;
+            this.EquipAvoidlb.Location = new System.Drawing.Point(343, 321);
+            this.EquipAvoidlb.Name = "EquipAvoidlb";
+            this.EquipAvoidlb.Size = new System.Drawing.Size(29, 12);
+            this.EquipAvoidlb.TabIndex = 76;
+            this.EquipAvoidlb.Text = "迴避";
+            // 
+            // EquipAvoidText
+            // 
+            this.EquipAvoidText.Location = new System.Drawing.Point(395, 318);
+            this.EquipAvoidText.Name = "EquipAvoidText";
+            this.EquipAvoidText.Size = new System.Drawing.Size(94, 22);
+            this.EquipAvoidText.TabIndex = 75;
+            this.EquipAvoidText.Text = "迴避";
+            // 
+            // EquipAcclb
+            // 
+            this.EquipAcclb.AutoSize = true;
+            this.EquipAcclb.Location = new System.Drawing.Point(343, 293);
+            this.EquipAcclb.Name = "EquipAcclb";
+            this.EquipAcclb.Size = new System.Drawing.Size(29, 12);
+            this.EquipAcclb.TabIndex = 74;
+            this.EquipAcclb.Text = "命中";
+            // 
+            // EquipAccText
+            // 
+            this.EquipAccText.Location = new System.Drawing.Point(395, 290);
+            this.EquipAccText.Name = "EquipAccText";
+            this.EquipAccText.Size = new System.Drawing.Size(94, 22);
+            this.EquipAccText.TabIndex = 73;
+            this.EquipAccText.Text = "命中";
+            // 
+            // EquipMdeflb
+            // 
+            this.EquipMdeflb.AutoSize = true;
+            this.EquipMdeflb.Location = new System.Drawing.Point(343, 266);
+            this.EquipMdeflb.Name = "EquipMdeflb";
+            this.EquipMdeflb.Size = new System.Drawing.Size(29, 12);
+            this.EquipMdeflb.TabIndex = 72;
+            this.EquipMdeflb.Text = "魔防";
+            // 
+            // EquipMdefText
+            // 
+            this.EquipMdefText.Location = new System.Drawing.Point(395, 263);
+            this.EquipMdefText.Name = "EquipMdefText";
+            this.EquipMdefText.Size = new System.Drawing.Size(94, 22);
+            this.EquipMdefText.TabIndex = 71;
+            this.EquipMdefText.Text = "魔防";
+            // 
+            // EquipWdeflb
+            // 
+            this.EquipWdeflb.AutoSize = true;
+            this.EquipWdeflb.Location = new System.Drawing.Point(168, 376);
+            this.EquipWdeflb.Name = "EquipWdeflb";
+            this.EquipWdeflb.Size = new System.Drawing.Size(29, 12);
+            this.EquipWdeflb.TabIndex = 70;
+            this.EquipWdeflb.Text = "物防";
+            // 
+            // EquipWdefText
+            // 
+            this.EquipWdefText.Location = new System.Drawing.Point(220, 373);
+            this.EquipWdefText.Name = "EquipWdefText";
+            this.EquipWdefText.Size = new System.Drawing.Size(94, 22);
+            this.EquipWdefText.TabIndex = 69;
+            this.EquipWdefText.Text = "物防";
+            // 
+            // EquipMatklb
+            // 
+            this.EquipMatklb.AutoSize = true;
+            this.EquipMatklb.Location = new System.Drawing.Point(168, 349);
+            this.EquipMatklb.Name = "EquipMatklb";
+            this.EquipMatklb.Size = new System.Drawing.Size(29, 12);
+            this.EquipMatklb.TabIndex = 68;
+            this.EquipMatklb.Text = "魔攻";
+            // 
+            // EquipMatkText
+            // 
+            this.EquipMatkText.Location = new System.Drawing.Point(220, 346);
+            this.EquipMatkText.Name = "EquipMatkText";
+            this.EquipMatkText.Size = new System.Drawing.Size(94, 22);
+            this.EquipMatkText.TabIndex = 67;
+            this.EquipMatkText.Text = "魔攻";
+            // 
+            // EquipWatklb
+            // 
+            this.EquipWatklb.AutoSize = true;
+            this.EquipWatklb.Location = new System.Drawing.Point(168, 321);
+            this.EquipWatklb.Name = "EquipWatklb";
+            this.EquipWatklb.Size = new System.Drawing.Size(29, 12);
+            this.EquipWatklb.TabIndex = 66;
+            this.EquipWatklb.Text = "物攻";
+            // 
+            // EquipWatkText
+            // 
+            this.EquipWatkText.Location = new System.Drawing.Point(220, 318);
+            this.EquipWatkText.Name = "EquipWatkText";
+            this.EquipWatkText.Size = new System.Drawing.Size(94, 22);
+            this.EquipWatkText.TabIndex = 65;
+            this.EquipWatkText.Text = "物攻";
+            // 
+            // EquipMplb
+            // 
+            this.EquipMplb.AutoSize = true;
+            this.EquipMplb.Location = new System.Drawing.Point(168, 294);
+            this.EquipMplb.Name = "EquipMplb";
+            this.EquipMplb.Size = new System.Drawing.Size(21, 12);
+            this.EquipMplb.TabIndex = 64;
+            this.EquipMplb.Text = "MP";
+            // 
+            // EquipMpText
+            // 
+            this.EquipMpText.Location = new System.Drawing.Point(220, 291);
+            this.EquipMpText.Name = "EquipMpText";
+            this.EquipMpText.Size = new System.Drawing.Size(94, 22);
+            this.EquipMpText.TabIndex = 63;
+            this.EquipMpText.Text = "MP";
+            // 
+            // EquipHplb
+            // 
+            this.EquipHplb.AutoSize = true;
+            this.EquipHplb.Location = new System.Drawing.Point(168, 266);
+            this.EquipHplb.Name = "EquipHplb";
+            this.EquipHplb.Size = new System.Drawing.Size(19, 12);
+            this.EquipHplb.TabIndex = 62;
+            this.EquipHplb.Text = "HP";
+            // 
+            // EquipHpText
+            // 
+            this.EquipHpText.Location = new System.Drawing.Point(220, 263);
+            this.EquipHpText.Name = "EquipHpText";
+            this.EquipHpText.Size = new System.Drawing.Size(94, 22);
+            this.EquipHpText.TabIndex = 61;
+            this.EquipHpText.Text = "HP";
+            // 
+            // EquipLuklb
+            // 
+            this.EquipLuklb.AutoSize = true;
+            this.EquipLuklb.Location = new System.Drawing.Point(11, 376);
+            this.EquipLuklb.Name = "EquipLuklb";
+            this.EquipLuklb.Size = new System.Drawing.Size(29, 12);
+            this.EquipLuklb.TabIndex = 60;
+            this.EquipLuklb.Text = "幸運";
+            // 
+            // EquipLukText
+            // 
+            this.EquipLukText.Location = new System.Drawing.Point(63, 373);
+            this.EquipLukText.Name = "EquipLukText";
+            this.EquipLukText.Size = new System.Drawing.Size(94, 22);
+            this.EquipLukText.TabIndex = 59;
+            this.EquipLukText.Text = "幸運";
+            // 
+            // EquipIntlb
+            // 
+            this.EquipIntlb.AutoSize = true;
+            this.EquipIntlb.Location = new System.Drawing.Point(11, 349);
+            this.EquipIntlb.Name = "EquipIntlb";
+            this.EquipIntlb.Size = new System.Drawing.Size(29, 12);
+            this.EquipIntlb.TabIndex = 58;
+            this.EquipIntlb.Text = "智力";
+            // 
+            // EquipIntText
+            // 
+            this.EquipIntText.Location = new System.Drawing.Point(63, 346);
+            this.EquipIntText.Name = "EquipIntText";
+            this.EquipIntText.Size = new System.Drawing.Size(94, 22);
+            this.EquipIntText.TabIndex = 57;
+            this.EquipIntText.Text = "智力";
+            // 
+            // EquipDexlb
+            // 
+            this.EquipDexlb.AutoSize = true;
+            this.EquipDexlb.Location = new System.Drawing.Point(11, 321);
+            this.EquipDexlb.Name = "EquipDexlb";
+            this.EquipDexlb.Size = new System.Drawing.Size(29, 12);
+            this.EquipDexlb.TabIndex = 56;
+            this.EquipDexlb.Text = "敏捷";
+            // 
+            // EquipDexText
+            // 
+            this.EquipDexText.Location = new System.Drawing.Point(63, 318);
+            this.EquipDexText.Name = "EquipDexText";
+            this.EquipDexText.Size = new System.Drawing.Size(94, 22);
+            this.EquipDexText.TabIndex = 55;
+            this.EquipDexText.Text = "敏捷";
+            // 
+            // EquipStrlb
+            // 
+            this.EquipStrlb.AutoSize = true;
+            this.EquipStrlb.Location = new System.Drawing.Point(11, 294);
+            this.EquipStrlb.Name = "EquipStrlb";
+            this.EquipStrlb.Size = new System.Drawing.Size(29, 12);
+            this.EquipStrlb.TabIndex = 54;
+            this.EquipStrlb.Text = "力量";
+            // 
+            // EquipStrText
+            // 
+            this.EquipStrText.Location = new System.Drawing.Point(63, 291);
+            this.EquipStrText.Name = "EquipStrText";
+            this.EquipStrText.Size = new System.Drawing.Size(94, 22);
+            this.EquipStrText.TabIndex = 53;
+            this.EquipStrText.Text = "力量";
+            // 
+            // Equiplevellb
+            // 
+            this.Equiplevellb.AutoSize = true;
+            this.Equiplevellb.Location = new System.Drawing.Point(304, 238);
+            this.Equiplevellb.Name = "Equiplevellb";
+            this.Equiplevellb.Size = new System.Drawing.Size(77, 12);
+            this.Equiplevellb.TabIndex = 52;
+            this.Equiplevellb.Text = "成功衝卷次數";
+            // 
+            // Equipupgradeslotslb
+            // 
+            this.Equipupgradeslotslb.AutoSize = true;
+            this.Equipupgradeslotslb.Location = new System.Drawing.Point(11, 266);
+            this.Equipupgradeslotslb.Name = "Equipupgradeslotslb";
+            this.Equipupgradeslotslb.Size = new System.Drawing.Size(41, 12);
+            this.Equipupgradeslotslb.TabIndex = 51;
+            this.Equipupgradeslotslb.Text = "衝捲數";
+            // 
+            // EquipupgradeslotsText
+            // 
+            this.EquipupgradeslotsText.Location = new System.Drawing.Point(63, 263);
+            this.EquipupgradeslotsText.Name = "EquipupgradeslotsText";
+            this.EquipupgradeslotsText.Size = new System.Drawing.Size(94, 22);
+            this.EquipupgradeslotsText.TabIndex = 50;
+            this.EquipupgradeslotsText.Text = "衝捲數";
+            // 
+            // Equipinventoryitemidlb
+            // 
+            this.Equipinventoryitemidlb.AutoSize = true;
+            this.Equipinventoryitemidlb.Location = new System.Drawing.Point(168, 238);
+            this.Equipinventoryitemidlb.Name = "Equipinventoryitemidlb";
+            this.Equipinventoryitemidlb.Size = new System.Drawing.Size(77, 12);
+            this.Equipinventoryitemidlb.TabIndex = 49;
+            this.Equipinventoryitemidlb.Text = "身上物品編號";
+            // 
+            // Equipinventoryequipmentidlb
+            // 
+            this.Equipinventoryequipmentidlb.AutoSize = true;
+            this.Equipinventoryequipmentidlb.Location = new System.Drawing.Point(20, 238);
+            this.Equipinventoryequipmentidlb.Name = "Equipinventoryequipmentidlb";
+            this.Equipinventoryequipmentidlb.Size = new System.Drawing.Size(77, 12);
+            this.Equipinventoryequipmentidlb.TabIndex = 48;
+            this.Equipinventoryequipmentidlb.Text = "此表裝備編號";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(557, 351);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 22);
+            this.textBox1.TabIndex = 47;
+            // 
+            // chEquiploadSinbtn
+            // 
+            this.chEquiploadSinbtn.Enabled = false;
+            this.chEquiploadSinbtn.Location = new System.Drawing.Point(688, 346);
+            this.chEquiploadSinbtn.Name = "chEquiploadSinbtn";
+            this.chEquiploadSinbtn.Size = new System.Drawing.Size(87, 29);
+            this.chEquiploadSinbtn.TabIndex = 46;
+            this.chEquiploadSinbtn.Text = "載入單一角色";
+            this.chEquiploadSinbtn.UseVisualStyleBackColor = true;
+            // 
+            // UPDATEchEquipBtn
+            // 
+            this.UPDATEchEquipBtn.Location = new System.Drawing.Point(696, 235);
+            this.UPDATEchEquipBtn.Name = "UPDATEchEquipBtn";
+            this.UPDATEchEquipBtn.Size = new System.Drawing.Size(79, 29);
+            this.UPDATEchEquipBtn.TabIndex = 45;
+            this.UPDATEchEquipBtn.Text = "儲存修改";
+            this.UPDATEchEquipBtn.UseVisualStyleBackColor = true;
+            this.UPDATEchEquipBtn.Click += new System.EventHandler(this.UPDATEchEquipBtn_Click);
+            // 
+            // chEquiploadAllbtn
+            // 
+            this.chEquiploadAllbtn.Location = new System.Drawing.Point(696, 385);
+            this.chEquiploadAllbtn.Name = "chEquiploadAllbtn";
+            this.chEquiploadAllbtn.Size = new System.Drawing.Size(79, 29);
+            this.chEquiploadAllbtn.TabIndex = 44;
+            this.chEquiploadAllbtn.Text = "載入全部";
+            this.chEquiploadAllbtn.UseVisualStyleBackColor = true;
+            this.chEquiploadAllbtn.Click += new System.EventHandler(this.ChEquiploadAllbtn_Click);
+            // 
+            // chEquipView
+            // 
+            this.chEquipView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chEquipView.Location = new System.Drawing.Point(-1, 0);
+            this.chEquipView.Name = "chEquipView";
+            this.chEquipView.RowTemplate.Height = 24;
+            this.chEquipView.Size = new System.Drawing.Size(780, 229);
+            this.chEquipView.TabIndex = 1;
+            this.chEquipView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChEquipView_CellClick);
             // 
             // tabPage5
             // 
@@ -1241,24 +1667,6 @@
             this.SqlNamelb.TabIndex = 12;
             this.SqlNamelb.Text = "資料庫名稱";
             // 
-            // IteminventoryitemidText
-            // 
-            this.IteminventoryitemidText.Location = new System.Drawing.Point(97, 240);
-            this.IteminventoryitemidText.Name = "IteminventoryitemidText";
-            this.IteminventoryitemidText.ReadOnly = true;
-            this.IteminventoryitemidText.Size = new System.Drawing.Size(110, 22);
-            this.IteminventoryitemidText.TabIndex = 54;
-            this.IteminventoryitemidText.Text = "物品當前編號";
-            // 
-            // ItemIteminventoryitemidTextlb
-            // 
-            this.ItemIteminventoryitemidTextlb.AutoSize = true;
-            this.ItemIteminventoryitemidTextlb.Location = new System.Drawing.Point(6, 243);
-            this.ItemIteminventoryitemidTextlb.Name = "ItemIteminventoryitemidTextlb";
-            this.ItemIteminventoryitemidTextlb.Size = new System.Drawing.Size(77, 12);
-            this.ItemIteminventoryitemidTextlb.TabIndex = 55;
-            this.ItemIteminventoryitemidTextlb.Text = "物品當前編號";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1287,6 +1695,9 @@
             this.chItemPage3.ResumeLayout(false);
             this.chItemPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chItemView)).EndInit();
+            this.chEquipPage4.ResumeLayout(false);
+            this.chEquipPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chEquipView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1305,7 +1716,7 @@
         private System.Windows.Forms.TabPage AccountsPage1;
         private System.Windows.Forms.TabPage charactersPage2;
         private System.Windows.Forms.TabPage chItemPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage chEquipPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
@@ -1402,6 +1813,44 @@
         private System.Windows.Forms.TextBox ItemchidText;
         private System.Windows.Forms.TextBox IteminventoryitemidText;
         private System.Windows.Forms.Label ItemIteminventoryitemidTextlb;
+        private System.Windows.Forms.DataGridView chEquipView;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button chEquiploadSinbtn;
+        private System.Windows.Forms.Button UPDATEchEquipBtn;
+        private System.Windows.Forms.Button chEquiploadAllbtn;
+        private System.Windows.Forms.Label EquipWatklb;
+        private System.Windows.Forms.TextBox EquipWatkText;
+        private System.Windows.Forms.Label EquipMplb;
+        private System.Windows.Forms.TextBox EquipMpText;
+        private System.Windows.Forms.Label EquipHplb;
+        private System.Windows.Forms.TextBox EquipHpText;
+        private System.Windows.Forms.Label EquipLuklb;
+        private System.Windows.Forms.TextBox EquipLukText;
+        private System.Windows.Forms.Label EquipIntlb;
+        private System.Windows.Forms.TextBox EquipIntText;
+        private System.Windows.Forms.Label EquipDexlb;
+        private System.Windows.Forms.TextBox EquipDexText;
+        private System.Windows.Forms.Label EquipStrlb;
+        private System.Windows.Forms.TextBox EquipStrText;
+        private System.Windows.Forms.Label Equiplevellb;
+        private System.Windows.Forms.Label Equipupgradeslotslb;
+        private System.Windows.Forms.TextBox EquipupgradeslotsText;
+        private System.Windows.Forms.Label Equipinventoryitemidlb;
+        private System.Windows.Forms.Label Equipinventoryequipmentidlb;
+        private System.Windows.Forms.Label EquipAvoidlb;
+        private System.Windows.Forms.TextBox EquipAvoidText;
+        private System.Windows.Forms.Label EquipAcclb;
+        private System.Windows.Forms.TextBox EquipAccText;
+        private System.Windows.Forms.Label EquipMdeflb;
+        private System.Windows.Forms.TextBox EquipMdefText;
+        private System.Windows.Forms.Label EquipWdeflb;
+        private System.Windows.Forms.TextBox EquipWdefText;
+        private System.Windows.Forms.Label EquipMatklb;
+        private System.Windows.Forms.TextBox EquipMatkText;
+        private System.Windows.Forms.Label EquipJumplb;
+        private System.Windows.Forms.TextBox EquipJumpText;
+        private System.Windows.Forms.Label EquipSpeedlb;
+        private System.Windows.Forms.TextBox EquipSpeedText;
     }
 }
 

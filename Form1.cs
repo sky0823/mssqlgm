@@ -23,7 +23,33 @@ namespace MySqlT
         {
             InitializeComponent();
         }
-
+        public string Rvview(string sel, int col)
+        {
+            switch (sel)
+            {
+                case "accounts":
+                    {
+                        int rindex = AccountsView.CurrentCell.RowIndex;
+                        return AccountsView.Rows[rindex].Cells[col].Value.ToString();
+                    }
+                case "characters":
+                    {
+                        int rindex = charactersView.CurrentCell.RowIndex;
+                        return charactersView.Rows[rindex].Cells[col].Value.ToString();
+                    }
+                case "inventoryitem":
+                    {
+                        int rindex = chItemView.CurrentCell.RowIndex;
+                        return chItemView.Rows[rindex].Cells[col].Value.ToString();
+                    }                    
+                case "inventoryequipment":
+                    {
+                        int rindex = chEquipView.CurrentCell.RowIndex;
+                        return chEquipView.Rows[rindex].Cells[col].Value.ToString();
+                    }
+            }
+            return "error";
+        }
         private void Loadsql(string s)
         {
             string dbHost = HostText.Text;
@@ -57,6 +83,10 @@ namespace MySqlT
                     case "inventoryitems":
                         chItemView.AutoGenerateColumns = true;
                         chItemView.DataSource = dataset.Tables[0];
+                        break; 
+                    case "inventoryequipment":
+                        chEquipView.AutoGenerateColumns = true;
+                        chEquipView.DataSource = dataset.Tables[0];
                         break;
                 }
                 MessageBox.Show("載入成功");
@@ -79,7 +109,6 @@ namespace MySqlT
            
            conn.Close();
         }
-
         private void LoadSinsql(string s, string strSQLKeyword)
         {
             string dbHost = HostText.Text;
@@ -142,29 +171,6 @@ namespace MySqlT
 
             conn.Close();
         }
-        public string Rvview(string sel, int col)
-        {
-            switch (sel)
-            {
-                case "accounts":
-                    {
-                        int rindex = AccountsView.CurrentCell.RowIndex;
-                        return AccountsView.Rows[rindex].Cells[col].Value.ToString();
-                    }
-                case "characters":
-                    {
-                        int rindex = charactersView.CurrentCell.RowIndex;
-                        return charactersView.Rows[rindex].Cells[col].Value.ToString();
-                    }
-                case "inventoryitem":
-                    {
-                        int rindex = chItemView.CurrentCell.RowIndex;
-                        return chItemView.Rows[rindex].Cells[col].Value.ToString();
-                    }                    
-            }
-            return "error";
-        }
-
         private void UPDATEBsql(string s , string rindex)
         {
             string dbHost = HostText.Text;
@@ -186,11 +192,21 @@ namespace MySqlT
                             + "',`maxmp`='" + chMaxmpText.Text + "',`meso`='" + chMesoText.Text + "',`job`='" + chJobText.Text
                             + "',`ap`='" + chApText.Text + "',`map`='" + chMapText.Text + "',`gm`='" + chGmText.Text
                             + "',`sp`='" + chSpText.Text + ",0,0,0,0,0,0,0,0,0' WHERE (`id`='" + rindex + "')";
-            String chItemstrsql = "UPDATE `inventoryitems` SET `quantity`='"+ ItemquantityText.Text
-                            + "' WHERE (`inventoryitemid`='" + IteminventoryitemidText.Text + "')  ";/*"UPDATE `" + s + "` SET `itemid`="+ItemitemidText.Text 
-                            + "',`quantity`='" + ItemquantityText.Text
-                            + "' WHERE (`inventoryitemid`='" + IteminventoryitemidText.Text + "')";*/
+            String chItemstrsql = "UPDATE `inventoryitems` SET`itemid`=" + ItemitemidText.Text 
+                            + ",`quantity`='" + ItemquantityText.Text
+                            + "' WHERE (`inventoryitemid`='" + IteminventoryitemidText.Text + "')";
+            String chEquipsql = "UPDATE `inventoryequipment` SET `upgradeslots`='" + EquipupgradeslotsText.Text
+                            + "',`str`='" + EquipStrText.Text + "',`dex`='" + EquipDexText.Text
+                            + "',`int`='" + EquipIntText.Text + "',`luk`='" + EquipLukText.Text
+                            + "',`hp`='" + EquipHpText.Text + "',`mp`='" + EquipMpText.Text
+                            + "',`watk`='" + EquipWatkText.Text + "',`matk`='" + EquipMatkText.Text
+                            + "',`wdef`='" + EquipWdefText.Text + "',`mdef`='" + EquipMdefText.Text
+                            + "',`acc`='" + EquipAccText.Text + "',`avoid`='" + EquipAvoidText.Text
+                            + "',`speed`='" + EquipSpeedText.Text + "',`jump`='" + EquipJumpText.Text
+                            + "' WHERE (`inventoryequipmentid`='" + Equipinventoryequipmentidlb.Text + "')";
+            MessageBox.Show(chEquipsql);
 
+            //UPDATE `inventoryequipment` SET `upgradeslots`='35',`str`='550',`dex`='550',`int`='550',`luk`='550',`hp`='550',`mp`='550',`watk`='250',`matk`='250',`wdef`='550',`mdef`='550',`acc`='550',`avoid`='550',`speed`='120',`jump`='123'WHERE (`inventoryequipmentid`='2738')
             // 連線到資料庫 
             try
             {
@@ -219,6 +235,13 @@ namespace MySqlT
                             sqlDA.Fill(dataset);
                             break;
                         }
+                    case "inventoryequipmentid":
+                        {
+                            sqlDA = new MySqlDataAdapter(chEquipsql, conn);
+                            DataSet dataset = new DataSet();
+                            sqlDA.Fill(dataset);
+                            break;
+                        }
                 }
                 MessageBox.Show("修改成功");
             }
@@ -240,6 +263,7 @@ namespace MySqlT
             conn.Close();
         }
 
+        //---
         private void AccountsView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             IDlb.Text = "ID:" + Rvview("accounts", 0);
@@ -255,7 +279,6 @@ namespace MySqlT
             mPointsText.Text = Rvview("accounts", 18);
             genderText.Text = Rvview("accounts", 19);
         }
-
         private void CharactersView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             chIDlb.Text= "角色編號: " + Rvview("characters", 0);
@@ -371,6 +394,27 @@ namespace MySqlT
             }
 
         }
+        private void ChEquipView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Equipinventoryequipmentidlb.Text=  Rvview("inventoryequipment", 0);
+            Equipinventoryitemidlb.Text = "身上物品編號: " + Rvview("inventoryequipment", 1);
+            Equiplevellb.Text = "成功衝卷次數: "+ Rvview("inventoryequipment", 3);
+            EquipupgradeslotsText.Text = Rvview("inventoryequipment", 2);
+            EquipStrText.Text = Rvview("inventoryequipment", 4);
+            EquipDexText.Text = Rvview("inventoryequipment", 5);
+            EquipIntText.Text = Rvview("inventoryequipment", 6);
+            EquipLukText.Text = Rvview("inventoryequipment", 7);
+            EquipHpText.Text = Rvview("inventoryequipment", 8);
+            EquipMpText.Text = Rvview("inventoryequipment", 9);
+            EquipWatkText.Text = Rvview("inventoryequipment", 10);
+            EquipMatkText.Text = Rvview("inventoryequipment", 11);
+            EquipWdefText.Text = Rvview("inventoryequipment", 12);
+            EquipMdefText.Text = Rvview("inventoryequipment", 13);
+            EquipAccText.Text = Rvview("inventoryequipment", 14);
+            EquipAvoidText.Text = Rvview("inventoryequipment", 15);
+            EquipSpeedText.Text = Rvview("inventoryequipment", 17);
+            EquipJumpText.Text = Rvview("inventoryequipment", 18);
+        }
         //-------------------------------------------------------------------------------------------
         private void Loadaccbtn_Click(object sender, EventArgs e)
         {
@@ -393,6 +437,7 @@ namespace MySqlT
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
+        //---
         private void Charactersbtn_Click(object sender, EventArgs e)
         {
             Loadsql("characters");
@@ -414,6 +459,7 @@ namespace MySqlT
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
+        //---
         private void ChItemloadbtn_Click(object sender, EventArgs e)
         {
             Loadsql("inventoryitems");
@@ -425,7 +471,6 @@ namespace MySqlT
             else
                 MessageBox.Show("請先載入再嘗試儲存修改");
         }
-
         private void ChItemloadSinbtn_Click(object sender, EventArgs e)
         {
             if (chnameloadItemText.Text != "")
@@ -433,14 +478,19 @@ namespace MySqlT
             else
                 MessageBox.Show("請輸入角色名稱在查詢");
         }
-
-
-
-
-
-
-
-
+        //---
+        private void ChEquiploadAllbtn_Click(object sender, EventArgs e)
+        {
+            Loadsql("inventoryequipment");
+        }
+        private void UPDATEchEquipBtn_Click(object sender, EventArgs e)
+        {
+            if (EquipupgradeslotsText.Text != "衝捲數")
+                UPDATEBsql("inventoryequipment", "");
+            else
+                MessageBox.Show("請先載入再嘗試儲存修改");
+        }
+        //---
 
         //--------------------------------------------------------------------------------------------------------
         void Num_Only(KeyPressEventArgs e)
