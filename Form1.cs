@@ -181,6 +181,7 @@ namespace MySqlT
                         // 如果有特殊的編碼在database後面請加上;CharSet=編碼, utf8請使用utf8_general_ci 
             string connStr = "server=" + dbHost + ";uid=" + dbUser + ";pwd=" + dbPass + ";database=" + dbName + "; convert zero datetime=True" + ";Port=" + dbPort;
             MySqlConnection conn = new MySqlConnection(connStr);
+
             String strsql = "UPDATE `" + s + "` SET `ACash`='" + ACashText.Text + "',"
                             + "`mPoints`= '" + mPointsText.Text + "',"
                             + "`gender`= '" + genderText.Text
@@ -204,7 +205,7 @@ namespace MySqlT
                             + "',`acc`='" + EquipAccText.Text + "',`avoid`='" + EquipAvoidText.Text
                             + "',`speed`='" + EquipSpeedText.Text + "',`jump`='" + EquipJumpText.Text
                             + "' WHERE (`inventoryequipmentid`='" + Equipinventoryequipmentidlb.Text + "')";
-            MessageBox.Show(chEquipsql);
+            //MessageBox.Show(chEquipsql);
 
             //UPDATE `inventoryequipment` SET `upgradeslots`='35',`str`='550',`dex`='550',`int`='550',`luk`='550',`hp`='550',`mp`='550',`watk`='250',`matk`='250',`wdef`='550',`mdef`='550',`acc`='550',`avoid`='550',`speed`='120',`jump`='123'WHERE (`inventoryequipmentid`='2738')
             // 連線到資料庫 
@@ -235,7 +236,7 @@ namespace MySqlT
                             sqlDA.Fill(dataset);
                             break;
                         }
-                    case "inventoryequipmentid":
+                    case "inventoryequipment":
                         {
                             sqlDA = new MySqlDataAdapter(chEquipsql, conn);
                             DataSet dataset = new DataSet();
