@@ -1684,7 +1684,7 @@
             this.Controls.Add(this.UserText);
             this.Controls.Add(this.HostText);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "楓之谷伺服器管理小幫手";
             ((System.ComponentModel.ISupportInitialize)(this.AccountsView)).EndInit();
             this.Accountstab.ResumeLayout(false);
             this.AccountsPage1.ResumeLayout(false);
