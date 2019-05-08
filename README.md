@@ -26,3 +26,8 @@ Mysql
 修改 characters 部分參數
 
 部分防呆
+
+
+#......好幾次沒有記了..
+
+查詢 inventoryitems/inventoryequipment 及 修改部分參數
